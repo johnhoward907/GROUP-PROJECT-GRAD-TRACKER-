@@ -132,12 +132,6 @@ function GradeForm({ onSubmit, studentData }) {
           <button type="submit" className="btn btn-primary">
             {studentData ? 'Update Grade' : 'Add Grade'}
           </button>
-          <button type="button" className="btn btn-secondary" onClick={() => {
-            // Reset editing state and close form
-            onSubmit(null); // Or a specific action to indicate cancel
-            }}>
-            Cancel
-          </button>
         </div>
       </form>
     </div>
