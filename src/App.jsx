@@ -57,6 +57,23 @@ function App() {
     setGrades(newGrades);
   };
 
+  // Apply filtering, searching, and sorting to grades
+  const filteredGrades = grades
+    .filter((grade) => {
+      // Filter by search term (student name)
+      const nameMatch = grade.studentName.toLowerCase().includes(filters.searchTerm.toLowerCase());
+      // Filter by subject if subject filter is set
+      const subjectMatch = filters.subject ? grade.subject.toLowerCase() === filters.subject.toLowerCase() : true;
+      return nameMatch && subjectMatch;
+    })
+    .sort((a, b) => {
+      if (filters.sortOrder === 'asc') {
+        return a.grade - b.grade;
+      } else {
+        return b.grade - a.grade;
+      }
+    });
+
   return (
     <>
       <NavBar />
@@ -87,7 +104,7 @@ function App() {
         )}
 
         <GradeTable
-          grades={grades}
+          grades={filteredGrades}
           onEdit={handleEdit} // Pass the edit function
           onDelete={handleDelete} // Pass the delete function
         />
