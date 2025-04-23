@@ -506,3 +506,20 @@ label {
     font-size: 0.95rem;
   }
 }
+
+/*Grade table styling*/
+.grade-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.grade-table th, .grade-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+.grade-table th {
+  background-color: #f2f2f2;
+}
