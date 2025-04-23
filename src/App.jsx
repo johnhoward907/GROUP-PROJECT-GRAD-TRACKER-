@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import NavBar from './components/NavBar';
 import GradeFilterBar from './components/GradeFilterBar';
 import GradeForm from './components/GradeForm';
+import GradeTable from './components/GradeTable';
 import './App.css';
 
 function App() {
@@ -49,6 +50,7 @@ function App() {
           >
             {showForm ? 'Cancel' : 'Add New Grade'}
           </button>
+          <GradeTable grades={grades} />
         </div>
 
         {/* Conditionally render the form */}
