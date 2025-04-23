@@ -1,7 +1,7 @@
 import React from 'react';
-import '../App.css'; 
+import '../App.css';
 
-function GradeTable({ grades }) {
+function GradeTable({ grades, onEdit, onDelete }) {
   return (
     <div className="card table-container" style={{ margin: '2rem auto', padding: '1rem' }}>
       <h2 className="table-title">Submitted Grades</h2>
@@ -16,6 +16,7 @@ function GradeTable({ grades }) {
               <th>Assignment</th>
               <th>Grade</th>
               <th>Comments</th>
+              <th>Actions</th> {/* New column for actions */}
             </tr>
           </thead>
           <tbody>
@@ -26,6 +27,14 @@ function GradeTable({ grades }) {
                 <td>{entry.assignment}</td>
                 <td>{entry.grade}</td>
                 <td>{entry.comments}</td>
+                <td className="actions-column"> {/* Style this column in CSS if needed */}
+                  <button className="btn btn-secondary btn-sm" onClick={() => onEdit(index)}>
+                    Edit
+                  </button>
+                  <button className="btn btn-danger btn-sm" onClick={() => onDelete(index)}>
+                    Delete
+                  </button>
+                </td>
               </tr>
             ))}
           </tbody>

@@ -1,15 +1,39 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../App.css';
 
 function GradeForm({ onSubmit, studentData }) {
   const [formData, setFormData] = useState({
-    studentId: studentData?.id || '',
-    studentName: studentData?.name || '',
-    subject: '',
-    assignment: '',
-    grade: '',
-    comments: ''
+    studentId: studentData?.id || '', // Keep if you have IDs
+    studentName: studentData?.studentName || '',
+    subject: studentData?.subject || '',
+    assignment: studentData?.assignment || '',
+    grade: studentData?.grade || '',
+    comments: studentData?.comments || ''
   });
+
+  useEffect(() => {
+    // Update form data when studentData prop changes (for editing)
+    if (studentData) {
+      setFormData({
+        studentId: studentData.id || '',
+        studentName: studentData.studentName || '',
+        subject: studentData.subject || '',
+        assignment: studentData.assignment || '',
+        grade: studentData.grade || '',
+        comments: studentData.comments || ''
+      });
+    } else {
+      // Reset form data when not editing
+      setFormData({
+        studentId: '',
+        studentName: '',
+        subject: '',
+        assignment: '',
+        grade: '',
+        comments: ''
+      });
+    }
+  }, [studentData]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,21 +46,14 @@ function GradeForm({ onSubmit, studentData }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit(formData);
-    // Reset form after submission
-    setFormData({
-      studentId: '',
-      studentName: '',
-      subject: '',
-      assignment: '',
-      grade: '',
-      comments: ''
-    });
+    // The App component will handle resetting the form after submission/update
   };
 
   return (
     <div className="card form-container" style={{ margin: '0 auto' }}>
       <h2 className="form-title">{studentData ? 'Edit Grade' : 'Add New Grade'}</h2>
       <form onSubmit={handleSubmit}>
+        {/* ... rest of your form fields ... */}
         <div className="form-group">
           <label htmlFor="studentName">Student Name</label>
           <input
@@ -115,7 +132,10 @@ function GradeForm({ onSubmit, studentData }) {
           <button type="submit" className="btn btn-primary">
             {studentData ? 'Update Grade' : 'Add Grade'}
           </button>
-          <button type="button" className="btn btn-secondary">
+          <button type="button" className="btn btn-secondary" onClick={() => {
+            // Reset editing state and close form
+            onSubmit(null); // Or a specific action to indicate cancel
+            }}>
             Cancel
           </button>
         </div>

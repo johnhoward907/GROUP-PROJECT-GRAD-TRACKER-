@@ -13,6 +13,8 @@ function App() {
     sortOrder: 'asc'
   });
   const [showForm, setShowForm] = useState(false);
+  const [editingIndex, setEditingIndex] = useState(null);
+  const [editingGrade, setEditingGrade] = useState(null);
 
   const handleFilterChange = (newFilters) => {
     setFilters({ ...filters, ...newFilters });
@@ -23,26 +25,50 @@ function App() {
   };
 
   const handleGradeSubmit = (gradeData) => {
-    setGrades([...grades, gradeData]);
-    setShowForm(false); // Close form after submission
+    if (editingIndex !== null) {
+      // Update existing grade
+      const updatedGrades = [...grades];
+      updatedGrades[editingIndex] = gradeData;
+      setGrades(updatedGrades);
+      setEditingIndex(null);
+      setEditingGrade(null);
+    } else {
+      // Add new grade
+      setGrades([...grades, gradeData]);
+    }
+    setShowForm(false); // Close form after submission/update
   };
 
   const toggleForm = () => {
     setShowForm(!showForm);
+    setEditingIndex(null); // Reset editing state when form is closed
+    setEditingGrade(null);
+  };
+
+  const handleEdit = (index) => {
+    setEditingIndex(index);
+    setEditingGrade(grades[index]);
+    setShowForm(true);
+  };
+
+  const handleDelete = (index) => {
+    const newGrades = [...grades];
+    newGrades.splice(index, 1);
+    setGrades(newGrades);
   };
 
   return (
     <>
       <NavBar />
       <main className="main-content">
-        <GradeFilterBar 
+        <GradeFilterBar
           onFilterChange={handleFilterChange}
           onSortChange={handleSortChange}
         />
-        
-        {/* Add Grade Button - Centered above where form will appear */}
+
+        {/* Add/Cancel Button */}
         <div className="button-container">
-          <button 
+          <button
             onClick={toggleForm}
             className="btn btn-primary"
             aria-expanded={showForm}
@@ -50,12 +76,22 @@ function App() {
           >
             {showForm ? 'Cancel' : 'Add New Grade'}
           </button>
-          <GradeTable grades={grades} />
         </div>
 
-        {/* Conditionally render the form */}
-        {showForm && <GradeForm onSubmit={handleGradeSubmit} />}
-        
+        {/* Conditionally render the form for adding or editing */}
+        {showForm && (
+          <GradeForm
+            onSubmit={handleGradeSubmit}
+            studentData={editingGrade} // Pass data for editing
+          />
+        )}
+
+        <GradeTable
+          grades={grades}
+          onEdit={handleEdit} // Pass the edit function
+          onDelete={handleDelete} // Pass the delete function
+        />
+
         {/* Other content can go here */}
       </main>
     </>

@@ -523,3 +523,25 @@ label {
 .grade-table th {
   background-color: #f2f2f2;
 }
+
+.grade-table .actions-column {
+  white-space: nowrap; /* Prevent buttons from wrapping */
+}
+
+.grade-table .actions-column button {
+  margin-right: 0.5rem;
+}
+
+.btn-sm {
+  padding: 0.3rem 0.6rem;
+  font-size: 0.8rem;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
