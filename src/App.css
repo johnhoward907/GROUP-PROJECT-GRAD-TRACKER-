@@ -366,3 +366,9 @@ body, html, #root {
   font-weight: 500;
   color: #389cc7;
 }
+#subject-filter{
+  color: grey;
+}
+#sort-order{
+  color: grey;
+}
