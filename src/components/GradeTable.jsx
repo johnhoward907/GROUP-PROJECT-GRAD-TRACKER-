@@ -2,6 +2,12 @@ import React from 'react';
 import '../App.css';
 
 function GradeTable({ grades, onEdit, onDelete }) {
+  const handleDeleteConfirmation = (index) => {
+    if (window.confirm("Are you sure you want to delete this grade?")) {
+      onDelete(index);
+    }
+  };
+
   return (
     <div className="card table-container" style={{ margin: '2rem auto', padding: '1rem' }}>
       <h2 className="table-title">Submitted Grades</h2>
@@ -28,10 +34,10 @@ function GradeTable({ grades, onEdit, onDelete }) {
                 <td>{entry.grade}</td>
                 <td>{entry.comments}</td>
                 <td className="actions-column"> {/* Style this column in CSS if needed */}
-                  <button className="btn btn-secondary btn-sm" onClick={() => onEdit(index)}>
+                  <button className="btn btn-info btn-sm" onClick={() => onEdit(index)}> {/* Changed to info */}
                     Edit
                   </button>
-                  <button className="btn btn-danger btn-sm" onClick={() => onDelete(index)}>
+                  <button className="btn btn-danger btn-sm" onClick={() => handleDeleteConfirmation(index)}>
                     Delete
                   </button>
                 </td>
