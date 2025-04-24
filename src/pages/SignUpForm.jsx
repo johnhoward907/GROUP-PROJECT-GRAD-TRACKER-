@@ -129,7 +129,7 @@ function SignUpForm() {
                 <p className="signup-prompt">
                     Already have an account?{' '}
                     <span
-                        onClick={() => navigate('/login')}
+                        onClick={() => navigate('/')}
                         style={{ color: '#c76338', cursor: 'pointer', textDecoration: 'underline' }}> Login Here
                     </span>.
                 </p>

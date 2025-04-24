@@ -1,44 +1,38 @@
 import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import '../App.css';
 
-function NavBar() {
-  const [loggedIn, setLoggedIn] = useState(false);
-  const [userRole, setUserRole] = useState(null);
+function NavBar({ userType, handleLogout }) {
+  // const [loggedIn, setLoggedIn] = useState(false);
+  // const [userRole, setUserRole] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
 
-  const handleLogin = (role) => {
-    setLoggedIn(true);
-    setUserRole(role);
-  };
-
-  const handleLogout = () => {
-    setLoggedIn(false);
-    setUserRole(null);
-  };
+  const user = JSON.parse(localStorage.getItem("user"));
 
   const handleSearch = (e) => {
     setSearchQuery(e.target.value);
-    // Add search functionality here
   };
 
   return (
     <nav className="navbar">
       <div className="navbar-left">
         <div className="navbar-brand">Grade Tracker</div>
-        {loggedIn && userRole === 'Teacher' && (
+        
+        {user && userType === 'teacher' && (
           <ul className="navbar-links">
-            <li><a href="#dashboard">Dashboard</a></li>
-            <li><a href="#students">Students</a></li>
-            <li><a href="#student-grades">Grades</a></li>
-            <li><a href="#analytics">Analytics</a></li>
+              <li><NavLink to={`/teacher/${user.id}/dashboard`}>Dashboard</NavLink></li>
+              <li><NavLink to={`/teacher/${user.id}/students`}>Students</NavLink></li>
+              <li><NavLink to={`/teacher/${user.id}/grades`}>Grades</NavLink></li>
+              <li><NavLink to={`/teacher/${user.id}/profile`}>Profile</NavLink></li>
+            {/* <li><NavLink to={`/teacher/${user.id}/analytics`}>Analytics</NavLink></li> */}
           </ul>
         )}
-        {loggedIn && userRole === 'student' && (
+        {user && userType === 'student' && (
           <ul className="navbar-links">
-            <li><a href="#my-grades">My Grades</a></li>
-            <li><a href="#assignments">Assignments</a></li>
-            <li><a href="#profile">Profile</a></li>
-          </ul>
+          <li><NavLink to={`/student/${user.id}/my-grades`}>My Grades</NavLink></li>
+          {/* <li><NavLink to={`/student/${user.id}/assignments`}>Assignments</NavLink></li> */}
+          <li><NavLink to={`/student/${user.id}/profile`}>Profile</NavLink></li>
+        </ul>
         )}
       </div>
       
@@ -54,29 +48,12 @@ function NavBar() {
       </div>
       
       <div className="navbar-right">
-        {!loggedIn ? (
-          <>
-            <button 
-              className="navbar-btn secondary"
-              onClick={() => handleLogin('Teacher')}
-            >
-              Teacher Login
-            </button>
-            <button 
-              className="navbar-btn"
-              onClick={() => handleLogin('student')}
-            >
-              Student Login
-            </button>
-          </>
-        ) : (
+        {userType && (
           <div className="user-actions">
-            <span className="user-welcome">Welcome, {userRole}</span>
+            <span className="user-welcome">Welcome, {JSON.parse(localStorage.getItem('user'))?. name}</span>
             <button 
               className="navbar-btn secondary"
-              onClick={handleLogout}
-            >
-              Logout
+              onClick={handleLogout}> Logout
             </button>
           </div>
         )}

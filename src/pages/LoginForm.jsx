@@ -9,17 +9,36 @@ function LoginForm() {
   const [password, setPassword] = useState('');
   
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
+
+    if (!email || !password) {
+        alert("Please enter both email and password");
+        return;
+    }
+
+    const endpoint = `http://localhost:3000/${userType}s?email=${email}&password=${password}`;
     
-    if (email && password) {
-      if (userType === "teacher") {
-        navigate("/teacher-dashboard");
-      } else {
-        navigate("/student-dashboard");
-      }
-    } else {
-      alert("Please enter both email and password");
+    try {
+        const res = await fetch(endpoint);
+        const data = await res.json();
+    
+        if (data.length > 0) {
+            const user = data[0];
+            localStorage.setItem("user", JSON.stringify(user));
+
+            if (userType === "teacher") {
+                navigate(`/teacher/${user.id}/dashboard`);
+            } else if (userType === "student") {
+                navigate(`/student/${user.id}/profile`);
+            }
+
+        } else {
+          alert("Invalid credentials");
+        }
+      } catch (error) {
+        console.error("Login failed:", error);
+        alert("Something went wrong. Try again.");
     }
   };
 

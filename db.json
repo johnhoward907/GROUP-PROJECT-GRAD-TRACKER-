@@ -38,7 +38,7 @@
     {
       "id": "a9a7",
       "name": "Frank Daniel",
-      "email": "danfrank@gmail.con",
+      "email": "danfrank@gmail.com",
       "password": "123456789",
       "userType": "Teacher"
     }
@@ -70,6 +70,13 @@
       "name": "Clay Walker",
       "email": "walkingclay@gmail.com",
       "password": "test123",
+      "userType": "student"
+    },
+    {
+      "id": "a8fb",
+      "name": "Mike Miller",
+      "email": "millerm123@gmail.com",
+      "password": "testing123",
       "userType": "student"
     }
   ]

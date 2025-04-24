@@ -3,11 +3,19 @@ import { Routes, Route } from 'react-router-dom';
 import LandingPage from './pages/LandingPage';
 import LoginForm from "./pages/LoginForm";
 import SignUpForm from './pages/SignUpForm';
+import TeacherDashboard from './pages/TeacherDashboard';
+import TeacherProfile from './pages/TeacherProfile';
+
+import StudentProfile from './pages/StudentProfile';
+import MyGrades from './pages/MyGrades';
+
+
 import NavBar from './components/NavBar';
 import GradeFilterBar from './components/GradeFilterBar';
 import GradeForm from './components/GradeForm';
 import GradeTable from './components/GradeTable';
 import './App.css';
+
 
 function GroupWorkLayout() {
   const [grades, setGrades] = useState([]);
@@ -125,6 +133,12 @@ function App() {
       <Route path="/" element={<LandingPage />} />
       <Route path="/login/:userType" element={<LoginForm />} />
       <Route path="/signup" element={<SignUpForm />} />
+
+      <Route path="/teacher/:id/dashboard" element={<TeacherDashboard />} />
+      <Route path="/teacher/:id/profile" element={<TeacherProfile />} />
+
+      <Route path="/student/:id/profile" element={<StudentProfile />} />
+      <Route path="/student/:id/my-grades" element={<MyGrades />} />
 
       <Route path="*" element={<GroupWorkLayout />} />
     </Routes>
