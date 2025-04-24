@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import LandingPage from './pages/LandingPage';
+import LoginForm from "./pages/LoginForm";
+import SignUpForm from './pages/SignUpForm';
 import NavBar from './components/NavBar';
 import GradeFilterBar from './components/GradeFilterBar';
 import GradeForm from './components/GradeForm';
 import GradeTable from './components/GradeTable';
 import './App.css';
 
-function App() {
+function GroupWorkLayout() {
   const [grades, setGrades] = useState([]);
   const [filters, setFilters] = useState({
     searchTerm: '',
@@ -112,6 +116,18 @@ function App() {
         {/* Other content can go here */}
       </main>
     </>
+  );
+}
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<LandingPage />} />
+      <Route path="/login/:userType" element={<LoginForm />} />
+      <Route path="/signup" element={<SignUpForm />} />
+
+      <Route path="*" element={<GroupWorkLayout />} />
+    </Routes>
   );
 }
 

@@ -1,0 +1,76 @@
+{
+  "teachers": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "email": "john.doe@school.com",
+      "password": "password123",
+      "userType": "teacher"
+    },
+    {
+      "id": "2",
+      "name": "Jane Smith",
+      "email": "jane.smith@school.com",
+      "password": "securePass456",
+      "userType": "teacher"
+    },
+    {
+      "id": "1084",
+      "name": "Jane Smith",
+      "email": "jane123smith@gmail.com",
+      "password": "123456789",
+      "userType": "Teacher"
+    },
+    {
+      "id": "a48d",
+      "name": "Nina Claire",
+      "email": "123clairenaina@gmail.com",
+      "password": "123456789",
+      "userType": "Teacher"
+    },
+    {
+      "id": "74e0",
+      "name": "John Smith",
+      "email": "smith123john@gmail.com",
+      "password": "123456789",
+      "userType": "Teacher"
+    },
+    {
+      "id": "a9a7",
+      "name": "Frank Daniel",
+      "email": "danfrank@gmail.con",
+      "password": "123456789",
+      "userType": "Teacher"
+    }
+  ],
+  "students": [
+    {
+      "id": "1",
+      "name": "Alice Brown",
+      "email": "alice.brown@student.com",
+      "password": "alicePass789",
+      "userType": "student"
+    },
+    {
+      "id": "2",
+      "name": "Bob White",
+      "email": "bob.white@student.com",
+      "password": "bobPass321",
+      "userType": "student"
+    },
+    {
+      "id": "cae5",
+      "name": "John Doe",
+      "email": "doejohn987@gmail.com",
+      "password": "123456789",
+      "userType": "student"
+    },
+    {
+      "id": "80e7",
+      "name": "Clay Walker",
+      "email": "walkingclay@gmail.com",
+      "password": "test123",
+      "userType": "student"
+    }
+  ]
+}
