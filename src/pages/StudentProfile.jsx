@@ -1,19 +1,17 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import NavBar from '../components/NavBar';
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
 import '../App.css';
 
-
 function StudentProfile() {
-
     const { id } = useParams();
     const [student, setStudent] = useState(null);
+    const [searchQuery, setSearchQuery] = useState('');
 
     useEffect(() => {
-            fetch(`http://localhost:3000/students/${id}`)
-              .then(res => res.json())
-              .then(data => setStudent(data));
+        fetch(`http://localhost:3000/students/${id}`)
+          .then(res => res.json())
+          .then(data => setStudent(data));
     }, [id]);
 
     const handleLogout = () => {
@@ -22,18 +20,28 @@ function StudentProfile() {
             localStorage.removeItem('user');
             window.location.href = '/login/student';
         }
-      };
-    
-      return (
+    };
+
+    const handleSearchChange = (e) => {
+        setSearchQuery(e.target.value);
+        // TODO: Implement search/filter logic here
+    };
+
+    return (
         <>
-          <NavBar userType="student" handleLogout={handleLogout} />
-          <div>
+            <NavBar 
+                userType="student" 
+                handleLogout={handleLogout} 
+                searchQuery={searchQuery} 
+                onSearchChange={handleSearchChange} 
+            />
+            <div>
                 <h2>Welcome, {student?.name || "Loading..."}</h2>
                 {/* Display personalized content */}
             </div>
             {/* rest of the dashboard content */}
         </>
-      );
+    );
 }
 
 export default StudentProfile;
