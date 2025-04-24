@@ -1,17 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 import '../App.css';
 
-function NavBar({ userType, handleLogout }) {
-  // const [loggedIn, setLoggedIn] = useState(false);
-  // const [userRole, setUserRole] = useState(null);
-  const [searchQuery, setSearchQuery] = useState('');
-
+function NavBar({ userType, handleLogout, searchQuery, onSearchChange }) {
   const user = JSON.parse(localStorage.getItem("user"));
-
-  const handleSearch = (e) => {
-    setSearchQuery(e.target.value);
-  };
 
   return (
     <nav className="navbar">
@@ -43,14 +35,14 @@ function NavBar({ userType, handleLogout }) {
           placeholder="Search students, grades..."
           aria-label="Search"
           value={searchQuery}
-          onChange={handleSearch}
+          onChange={onSearchChange}
         />
       </div>
       
       <div className="navbar-right">
         {userType && (
           <div className="user-actions">
-            <span className="user-welcome">Welcome, {JSON.parse(localStorage.getItem('user'))?. name}</span>
+            <span className="user-welcome">Welcome, {user?.name}</span>
             <button 
               className="navbar-btn secondary"
               onClick={handleLogout}> Logout

@@ -1,13 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
 import NavBar from '../components/NavBar';
 import '../App.css';
 
 function TeacherDashboard() {
-
     const { id } = useParams();
     const [teacher, setTeacher] = useState(null);
+    const [searchQuery, setSearchQuery] = useState('');
 
     useEffect(() => {
         fetch(`http://localhost:3000/teachers/${id}`)
@@ -21,18 +20,28 @@ function TeacherDashboard() {
             localStorage.removeItem('user');
             window.location.href = '/login/teacher';
         }
-      };
-    
-      return (
+    };
+
+    const handleSearchChange = (e) => {
+        setSearchQuery(e.target.value);
+        // TODO: Implement search/filter logic here
+    };
+
+    return (
         <>
-        <NavBar userType="teacher" handleLogout={handleLogout} />
+            <NavBar 
+                userType="teacher" 
+                handleLogout={handleLogout} 
+                searchQuery={searchQuery} 
+                onSearchChange={handleSearchChange} 
+            />
             <div>
                 <h2>Welcome, {teacher?.name || "Loading..."}</h2>
                 {/* Display personalized content */}
             </div>
             {/* rest of the dashboard content */}
         </>
-      );
+    );
 }
 
 export default TeacherDashboard;

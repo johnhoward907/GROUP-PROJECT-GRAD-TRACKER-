@@ -31,20 +31,22 @@ function SignUpForm() {
           return;
         }
   
+        const normalizedUserType = userType.toLowerCase();
+
         const newUser = {
           name,
           email,
           password,
-          userType
+          userType: normalizedUserType
         };
 
-        const endpoint = userType.toLowerCase() === "teacher" ? "teachers" : "students";
+        const endpoint = normalizedUserType === "teacher" ? "teachers" : "students";
   
         await axios.post(`http://localhost:3000/${endpoint}`, newUser);
 
         alert("Account created successfully!");
 
-        navigate(`/login/${userType.toLowerCase()}`);
+        navigate(`/login/${normalizedUserType}`);
     } catch (err) {
         console.error("Sign-up error:", err);
         alert("Error creating account. Please try again.");
@@ -118,7 +120,7 @@ function SignUpForm() {
                         required
                         >
                         <option value="">Select role</option>
-                        <option value="Teacher">Teacher</option>
+                        <option value="teacher">Teacher</option>
                         <option value="student">Student</option>
                         </select>
                     </div>
