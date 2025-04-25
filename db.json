@@ -5,7 +5,7 @@
       "name": "John Doe",
       "email": "john.doe@school.com",
       "password": "password123",
-      "userType": "Teacher",
+      "userType": "teacher",
       "class": "Grade 10",
       "subject": "Mathematics"
     },
@@ -14,7 +14,7 @@
       "name": "Jane Smith",
       "email": "jane.smith@school.com",
       "password": "securePass456",
-      "userType": "Teacher",
+      "userType": "teacher",
       "class": "Grade 11",
       "subject": "Science"
     },
@@ -23,7 +23,7 @@
       "name": "Jane Smith",
       "email": "jane123smith@gmail.com",
       "password": "123456789",
-      "userType": "Teacher",
+      "userType": "teacher",
       "class": "Grade 12",
       "subject": "English"
     },
@@ -32,7 +32,7 @@
       "name": "Nina Claire",
       "email": "123clairenaina@gmail.com",
       "password": "123456789",
-      "userType": "Teacher",
+      "userType": "teacher",
       "class": "Grade 9",
       "subject": "History"
     },
@@ -41,7 +41,7 @@
       "name": "John Smith",
       "email": "smith123john@gmail.com",
       "password": "123456789",
-      "userType": "Teacher",
+      "userType": "teacher",
       "class": "Grade 10",
       "subject": "Mathematics"
     },
@@ -50,7 +50,7 @@
       "name": "Frank Daniel",
       "email": "danfrank@gmail.com",
       "password": "123456789",
-      "userType": "Teacher",
+      "userType": "teacher",
       "class": "Grade 11",
       "subject": "Science"
     }

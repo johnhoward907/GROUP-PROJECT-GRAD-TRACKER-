@@ -33,21 +33,31 @@ function TeacherStudents() {
   return (
     <>
       <NavBar userType="teacher" handleLogout={handleLogout} />
-      <div className="container">
+      <div className="students-container">
         <h2>Students of {teacher?.name || "Loading..."}</h2>
         {students.length === 0 ? (
-          <p>No students found.</p>
-        ) : (
-          <div className="student-list">
-            {students.map(student => (
-              <div key={student.id} className="student-card">
-                <h3>{student.name}</h3>
-                <p><strong>Email:</strong> {student.email}</p>
-                {/* Add more student info here if needed */}
-              </div>
-            ))}
-          </div>
-        )}
+          <p className="no-students">No students found.</p>) 
+          :
+          (
+            <table className="students-table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  {/* Add more headers if needed */}
+                </tr>
+              </thead>
+              <tbody>
+                {students.map(student => (
+                  <tr key={student.id}>
+                    <td data-label="Name">{student.name}</td>
+                    <td data-label="Email"><strong>Email:</strong> {student.email}</td>
+                    {/* Add more cells if needed */}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          )}
       </div>
     </>
   );

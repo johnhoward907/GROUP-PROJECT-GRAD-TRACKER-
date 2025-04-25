@@ -26,14 +26,15 @@ function TeacherProfile() {
     <>
       <NavBar userType="teacher" handleLogout={handleLogout} />
       <div className="container profile-container">
-        <h2 className="profile-title">Welcome, {teacher?.name || "Loading..."}</h2>
-        {teacher && (
-          <div className="teacher-info card">
-            <p><strong>Email:</strong> {teacher.email}</p>
-            <p><strong>Class:</strong> {teacher.class}</p>
-            <p><strong>Subject:</strong> {teacher.subject}</p>
-            {/* Add other relevant info here */}
-          </div>
+          <h2 className="profile-title">Welcome, {teacher?.name || "Loading..."}</h2>
+          {teacher && (
+            <div className="teacher-info card">
+              <p><strong>Name:</strong> {teacher.name}</p>
+              <p><strong>Email:</strong> {teacher.email}</p>
+              <p><strong>Class:</strong> {teacher.class}</p>
+              <p><strong>Subject:</strong> {teacher.subject}</p>
+              {/* Add other relevant info here */}
+        </div>
         )}
       </div>
     </>
