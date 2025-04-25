@@ -6,7 +6,6 @@ import '../App.css';
 function StudentProfile() {
     const { id } = useParams();
     const [student, setStudent] = useState(null);
-    const [searchQuery, setSearchQuery] = useState('');
 
     useEffect(() => {
         fetch(`http://localhost:3000/students/${id}`)
@@ -22,24 +21,19 @@ function StudentProfile() {
         }
     };
 
-    const handleSearchChange = (e) => {
-        setSearchQuery(e.target.value);
-        // TODO: Implement search/filter logic here
-    };
-
     return (
         <>
-            <NavBar 
-                userType="student" 
-                handleLogout={handleLogout} 
-                searchQuery={searchQuery} 
-                onSearchChange={handleSearchChange} 
-            />
-            <div>
-                <h2>Welcome, {student?.name || "Loading..."}</h2>
-                {/* Display personalized content */}
+            <NavBar userType="student" handleLogout={handleLogout} />
+            <div className="container profile-container">
+                <h2 className="profile-title">Welcome, {student?.name || "Loading..."}</h2>
+                {student && (
+                <div className="teacher-info card">
+                    <p><strong>Name:</strong> {student.name}</p>
+                    <p><strong>Email:</strong> {student.email}</p>
+                    {/* Add other relevant info here */}
+                </div>
+                )}
             </div>
-            {/* rest of the dashboard content */}
         </>
     );
 }
