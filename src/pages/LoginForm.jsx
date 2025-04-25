@@ -7,7 +7,7 @@ function LoginForm() {
   const { userType } = useParams();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState(null);
+  //const [error, setError] = useState(null);
 
   // Validate userType param
   const validUserTypes = ['teacher', 'student'];

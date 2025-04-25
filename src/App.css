@@ -608,6 +608,15 @@ label {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
+.login-button.teacher:hover {
+  background-color: #2e89b3;
+}
+
+.login-button.student:hover {
+  background-color: #a94e2b;
+}
+
+
 .signup-prompt {
   margin-top: 2rem;
   font-size: 1rem;

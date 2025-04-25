@@ -5,7 +5,7 @@
       "name": "John Doe",
       "email": "john.doe@school.com",
       "password": "password123",
-      "userType": "teacher",
+      "userType": "Teacher",
       "class": "Grade 10",
       "subject": "Mathematics"
     },
@@ -14,7 +14,7 @@
       "name": "Jane Smith",
       "email": "jane.smith@school.com",
       "password": "securePass456",
-      "userType": "teacher",
+      "userType": "Teacher",
       "class": "Grade 11",
       "subject": "Science"
     },
