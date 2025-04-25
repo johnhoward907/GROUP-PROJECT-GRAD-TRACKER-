@@ -25,11 +25,17 @@ function TeacherProfile() {
   return (
     <>
       <NavBar userType="teacher" handleLogout={handleLogout} />
-      <div>
-        <h2>Welcome, {teacher?.name || "Loading..."}</h2>
-        {/* Display personalized content */}
+      <div className="container profile-container">
+        <h2 className="profile-title">Welcome, {teacher?.name || "Loading..."}</h2>
+        {teacher && (
+          <div className="teacher-info card">
+            <p><strong>Email:</strong> {teacher.email}</p>
+            <p><strong>Class:</strong> {teacher.class}</p>
+            <p><strong>Subject:</strong> {teacher.subject}</p>
+            {/* Add other relevant info here */}
+          </div>
+        )}
       </div>
-      {/* Extra teacher info can go here */}
     </>
   );
 }

@@ -5,42 +5,54 @@
       "name": "John Doe",
       "email": "john.doe@school.com",
       "password": "password123",
-      "userType": "teacher"
+      "userType": "teacher",
+      "class": "Grade 10",
+      "subject": "Mathematics"
     },
     {
       "id": "2",
       "name": "Jane Smith",
       "email": "jane.smith@school.com",
       "password": "securePass456",
-      "userType": "teacher"
+      "userType": "teacher",
+      "class": "Grade 11",
+      "subject": "Science"
     },
     {
       "id": "1084",
       "name": "Jane Smith",
       "email": "jane123smith@gmail.com",
       "password": "123456789",
-      "userType": "Teacher"
+      "userType": "Teacher",
+      "class": "Grade 12",
+      "subject": "English"
     },
     {
       "id": "a48d",
       "name": "Nina Claire",
       "email": "123clairenaina@gmail.com",
       "password": "123456789",
-      "userType": "Teacher"
+      "userType": "Teacher",
+      "class": "Grade 9",
+      "subject": "History"
     },
     {
       "id": "74e0",
       "name": "John Smith",
       "email": "smith123john@gmail.com",
       "password": "123456789",
-      "userType": "Teacher"
+      "userType": "Teacher",
+      "class": "Grade 10",
+      "subject": "Mathematics"
     },
     {
       "id": "a9a7",
       "name": "Frank Daniel",
       "email": "danfrank@gmail.com",
       "password": "123456789",
-      "userType": "Teacher"
+      "userType": "Teacher",
+      "class": "Grade 11",
+      "subject": "Science"
     }
   ],
   "students": [
@@ -78,6 +90,58 @@
       "email": "millerm123@gmail.com",
       "password": "testing123",
       "userType": "student"
+    }
+  ],
+  "grades": [
+    {
+      "id": "g1",
+      "teacherId": "1",
+      "studentId": "1",
+      "studentName": "Alice Brown",
+      "subject": "math",
+      "assignment": "Algebra Homework",
+      "grade": 88,
+      "comments": "Good work"
+    },
+    {
+      "id": "g2",
+      "teacherId": "1",
+      "studentId": "2",
+      "studentName": "Bob White",
+      "subject": "science",
+      "assignment": "Biology Lab",
+      "grade": 92,
+      "comments": "Excellent"
+    },
+    {
+      "id": "g3",
+      "teacherId": "2",
+      "studentId": "cae5",
+      "studentName": "John Doe",
+      "subject": "english",
+      "assignment": "Essay on Shakespeare",
+      "grade": 85,
+      "comments": "Well written"
+    },
+    {
+      "id": "g4",
+      "teacherId": "2",
+      "studentId": "80e7",
+      "studentName": "Clay Walker",
+      "subject": "history",
+      "assignment": "World War II Presentation",
+      "grade": 90,
+      "comments": "Very informative"
+    },
+    {
+      "id": "g5",
+      "teacherId": "1",
+      "studentId": "a8fb",
+      "studentName": "Mike Miller",
+      "subject": "math",
+      "assignment": "Calculus Quiz",
+      "grade": 78,
+      "comments": "Needs improvement"
     }
   ]
 }

@@ -5,17 +5,17 @@ import LoginForm from "./pages/LoginForm";
 import SignUpForm from './pages/SignUpForm';
 import TeacherDashboard from './pages/TeacherDashboard';
 import TeacherProfile from './pages/TeacherProfile';
+import TeacherStudents from './pages/TeacherStudents';
+import TeacherGrades from './pages/TeacherGrades';
 
 import StudentProfile from './pages/StudentProfile';
 import MyGrades from './pages/MyGrades';
-
 
 import NavBar from './components/NavBar';
 import GradeFilterBar from './components/GradeFilterBar';
 import GradeForm from './components/GradeForm';
 import GradeTable from './components/GradeTable';
 import './App.css';
-
 
 function GroupWorkLayout() {
   const [grades, setGrades] = useState([]);
@@ -136,6 +136,8 @@ function App() {
 
       <Route path="/teacher/:id/dashboard" element={<TeacherDashboard />} />
       <Route path="/teacher/:id/profile" element={<TeacherProfile />} />
+      <Route path="/teacher/:id/students" element={<TeacherStudents />} />
+      <Route path="/teacher/:id/grades" element={<TeacherGrades />} />
 
       <Route path="/student/:id/profile" element={<StudentProfile />} />
       <Route path="/student/:id/my-grades" element={<MyGrades />} />
