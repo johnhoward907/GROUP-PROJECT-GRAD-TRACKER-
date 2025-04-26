@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.css';
 
-function GradeTable({ grades, onEdit, onDelete }) {
+function GradeTable({ grades, onEdit, onDelete, isStudent }) {
   const handleDeleteConfirmation = (index) => {
     if (window.confirm("Are you sure you want to delete this grade?")) {
       onDelete(index);
@@ -22,7 +22,7 @@ function GradeTable({ grades, onEdit, onDelete }) {
               <th>Assignment</th>
               <th>Grade</th>
               <th>Comments</th>
-              <th>Actions</th> {/* New column for actions */}
+              {!isStudent && <th>Actions</th>} {/* Hide actions column for students */}
             </tr>
           </thead>
           <tbody>
@@ -33,14 +33,16 @@ function GradeTable({ grades, onEdit, onDelete }) {
                 <td>{entry.assignment}</td>
                 <td>{entry.grade}</td>
                 <td>{entry.comments}</td>
-                <td className="actions-column"> {/* Style this column in CSS if needed */}
-                  <button className="btn btn-info btn-sm" onClick={() => onEdit(index)}> {/* Changed to info */}
-                    Edit
-                  </button>
-                  <button className="btn btn-danger btn-sm" onClick={() => handleDeleteConfirmation(index)}>
-                    Delete
-                  </button>
-                </td>
+                {!isStudent && (
+                  <td className="actions-column"> {/* Style this column in CSS if needed */}
+                    <button className="btn btn-info btn-sm" onClick={() => onEdit(index)}> {/* Changed to info */}
+                      Edit
+                    </button>
+                    <button className="btn btn-danger btn-sm" onClick={() => handleDeleteConfirmation(index)}>
+                      Delete
+                    </button>
+                  </td>
+                )}
               </tr>
             ))}
           </tbody>

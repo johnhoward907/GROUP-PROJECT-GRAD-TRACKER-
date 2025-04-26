@@ -46,7 +46,7 @@ function StudentGrades() {
         {loading ? (
           <p>Loading grades...</p>
         ) : (
-          <GradeTable grades={grades} onEdit={() => {}} onDelete={() => {}} />
+          <GradeTable grades={grades} onEdit={() => {}} onDelete={() => {}} isStudent={true} />
         )}
       </div>
     </>

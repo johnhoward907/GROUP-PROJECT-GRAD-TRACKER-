@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../App.css';
 
-function GradeForm({ onSubmit, studentData }) {
+function GradeForm({ onSubmit, studentData, isStudent }) {
   const [formData, setFormData] = useState({
     studentId: studentData?.id || '', // Keep if you have IDs
     studentName: studentData?.studentName || '',
@@ -36,6 +36,7 @@ function GradeForm({ onSubmit, studentData }) {
   }, [studentData]);
 
   const handleChange = (e) => {
+    if (isStudent) return; // Prevent changes if student
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
@@ -45,6 +46,7 @@ function GradeForm({ onSubmit, studentData }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (isStudent) return; // Prevent submit if student
     onSubmit(formData);
     // The App component will handle resetting the form after submission/update
   };
@@ -64,6 +66,7 @@ function GradeForm({ onSubmit, studentData }) {
             onChange={handleChange}
             required
             className="form-input"
+            disabled={isStudent}
           />
         </div>
 
@@ -77,6 +80,7 @@ function GradeForm({ onSubmit, studentData }) {
               onChange={handleChange}
               required
               className="form-select"
+              disabled={isStudent}
             >
               <option value="">Select Subject</option>
               <option value="math">Mathematics</option>
@@ -99,6 +103,7 @@ function GradeForm({ onSubmit, studentData }) {
               onChange={handleChange}
               required
               className="form-input"
+              disabled={isStudent}
             />
           </div>
         </div>
@@ -113,6 +118,7 @@ function GradeForm({ onSubmit, studentData }) {
             onChange={handleChange}
             required
             className="form-input"
+            disabled={isStudent}
           />
         </div>
 
@@ -125,11 +131,12 @@ function GradeForm({ onSubmit, studentData }) {
             onChange={handleChange}
             rows="3"
             className="form-textarea"
+            disabled={isStudent}
           />
         </div>
 
         <div className="form-actions">
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="btn btn-primary" disabled={isStudent}>
             {studentData ? 'Update Grade' : 'Add Grade'}
           </button>
         </div>

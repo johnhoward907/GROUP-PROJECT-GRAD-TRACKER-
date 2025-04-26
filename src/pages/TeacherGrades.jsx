@@ -130,8 +130,8 @@ function TeacherGrades() {
             {showForm ? 'Cancel' : 'Add New Grade'}
           </button>
         </div>
-        {showForm && <GradeForm onSubmit={handleGradeSubmit} studentData={editingGrade} />}
-        <GradeTable grades={filteredGrades} onEdit={handleEditGrade} onDelete={handleDeleteGrade} />
+        {showForm && <GradeForm onSubmit={handleGradeSubmit} studentData={editingGrade} isStudent={false} />}
+        <GradeTable grades={filteredGrades} onEdit={handleEditGrade} onDelete={handleDeleteGrade} isStudent={false} />
       </div>
     </>
   );
