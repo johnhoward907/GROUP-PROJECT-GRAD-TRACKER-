@@ -1,18 +1,34 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import NavBar from '../components/NavBar';
-// import { useParams } from 'react-router-dom';
-// import { useEffect, useState } from 'react';
+import GradeTable from '../components/GradeTable';
 import '../App.css';
 
 function StudentGrades() {
-  // const { id } = useParams();
-  // const [grades, setGrades] = useState(null);
+  const [grades, setGrades] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-//   useEffect(() => {
-//     fetch(`http://localhost:3000/students/${id}/grades`)
-//       .then(res => res.json())
-//       .then(data => setGrades(data));
-//   }, [id]);
+  // Parse logged-in user from localStorage
+  const user = JSON.parse(localStorage.getItem('user'));
+
+  useEffect(() => {
+    if (user && user.id) {
+      // Fetch grades from local db.json or API
+      import('../../db.json').then((data) => {
+        // Filter grades for logged-in student by studentId
+        const studentGrades = data.grades.filter(
+          (grade) => grade.studentId === user.id
+        );
+        setGrades(studentGrades);
+        setLoading(false);
+      }).catch(() => {
+        setGrades([]);
+        setLoading(false);
+      });
+    } else {
+      setGrades([]);
+      setLoading(false);
+    }
+  }, [user]);
 
   const handleLogout = () => {
     const confirmed = window.confirm("Are you sure you want to logout?");
@@ -25,22 +41,14 @@ function StudentGrades() {
   return (
     <>
       <NavBar userType="student" handleLogout={handleLogout} />
-      {/* <div>
+      <div>
         <h2>My Grades</h2>
-        {/* If grades data is available, display it
-        {grades ? (
-          <ul>
-            {grades.map((grade, index) => (
-              <li key={index}>
-                <strong>{grade.subject}: </strong>
-                {grade.grade}
-              </li>
-            ))}
-          </ul>
-        ) : (
+        {loading ? (
           <p>Loading grades...</p>
+        ) : (
+          <GradeTable grades={grades} onEdit={() => {}} onDelete={() => {}} />
         )}
-      </div> */}
+      </div>
     </>
   );
 }
