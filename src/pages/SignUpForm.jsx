@@ -1,57 +1,97 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
 import '../App.css';
 
 function SignUpForm() {
-  const navigate = useNavigate();
+    const navigate = useNavigate();
 
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-  const [userType, setUserType] = useState('');
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+    const [userType, setUserType] = useState('');
 
-  const handleSignUp = async (e) => {
-    e.preventDefault();
-
-    if (password !== confirmPassword) {
-      alert("Passwords do not match!");
-      return;
-    }
-
-    try {
-        const [teacherRes, studentRes] = await Promise.all([
-            axios.get(`http://localhost:3000/teachers?email=${email}`),
-            axios.get(`http://localhost:3000/students?email=${email}`)
-        ]);
-
-        if (teacherRes.data.length > 0 || studentRes.data.length > 0) {
-          alert("User with that email already exists.");
-          return;
-        }
-  
+    const handleSignUp = (e) => {
+        e.preventDefault();
         const normalizedUserType = userType.toLowerCase();
+        let generatedId = "";
+        let assignedClass = "";
 
-        const newUser = {
-          name,
-          email,
-          password,
-          userType: normalizedUserType
-        };
+        if (password !== confirmPassword) {
+        alert("Passwords do not match!");
+        return;
+        }
 
-        const endpoint = normalizedUserType === "teacher" ? "teachers" : "students";
-  
-        await axios.post(`http://localhost:3000/${endpoint}`, newUser);
+        fetch(`http://localhost:3000/teachers?email=${email}`)
+            .then(teacherRes => teacherRes.json())
+            .then(teacherData => {
+                if (teacherData.length > 0) {
+                    alert("User with that email already exists.");
+                    throw new Error("User already exists as teacher.");
+                }
 
-        alert("Account created successfully!");
+                return fetch(`http://localhost:3000/students?email=${email}`);
+            })
+            .then(studentRes => studentRes.json())
+            .then(studentData => {
+                if (studentData.length > 0) {
+                    alert("User with that email already exists.");
+                    throw new Error("User already exists as student.");
+                }
 
-        navigate(`/login/${normalizedUserType}`);
-    } catch (err) {
-        console.error("Sign-up error:", err);
-        alert("Error creating account. Please try again.");
-    }
-  };
+                const endpoint = normalizedUserType === "teacher" ? "teachers" : "students";
+
+                return fetch(`http://localhost:3000/${endpoint}`);
+
+            })
+            .then(allUsersRes => allUsersRes.json())
+            .then(allUsers => {
+                const newIdPrefix = normalizedUserType === "teacher" ? "T" : "S";
+                const newIdNumber = allUsers.length + 1;
+                generatedId = `${newIdPrefix}${newIdNumber}`;
+
+                if (normalizedUserType === "student") {
+                    // Automatically assign class to students using 4-class cycle: North, SOuth, East, West.
+                    const classCycle = ['North', 'South', 'East', 'West'];
+                    assignedClass = classCycle[allUsers.length % 4];
+                }
+
+                const newUser = {
+                    id: generatedId,
+                    name: name,
+                    email: email,
+                    password: password,
+                    userType: normalizedUserType,
+                    class: assignedClass
+                };
+
+                const endpoint = normalizedUserType === "teacher" ? "teachers" : "students";
+
+                return fetch(`http://localhost:3000/${endpoint}`, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(newUser)
+                });
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Error creating account.');
+                }
+                alert("Account created successfully!");
+    
+                if (normalizedUserType === "teacher") {
+                    navigate(`/teacher/${generatedId}/assignment`, { state: { firstTime: true } });
+                } else {
+                    navigate(`/login/student`);
+                }
+        })
+        .catch(err => {
+            console.error("Sign-up error:", err);
+            alert("Error creating account. Please try again.");
+        });
+    };
 
     return (
         <div className="signup-container">

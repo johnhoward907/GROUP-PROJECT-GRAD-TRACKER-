@@ -30,6 +30,7 @@ function StudentProfile() {
                 <div className="teacher-info card">
                     <p><strong>Name:</strong> {student.name}</p>
                     <p><strong>Email:</strong> {student.email}</p>
+                    <p><strong>Class:</strong> {student.class}</p>
                     {/* Add other relevant info here */}
                 </div>
                 )}
