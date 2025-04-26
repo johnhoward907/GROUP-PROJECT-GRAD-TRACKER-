@@ -7,6 +7,7 @@ import TeacherDashboard from './pages/TeacherDashboard';
 import TeacherProfile from './pages/TeacherProfile';
 import TeacherStudents from './pages/TeacherStudents';
 import TeacherGrades from './pages/TeacherGrades';
+import TeacherAssignment from './pages/TeacherAssignment';
 
 import StudentProfile from './pages/StudentProfile';
 import MyGrades from './pages/MyGrades';
@@ -134,6 +135,7 @@ function App() {
       <Route path="/login/:userType" element={<LoginForm />} />
       <Route path="/signup" element={<SignUpForm />} />
 
+      <Route path="/teacher/:id/assignment" element={<TeacherAssignment />} />
       <Route path="/teacher/:id/dashboard" element={<TeacherDashboard />} />
       <Route path="/teacher/:id/profile" element={<TeacherProfile />} />
       <Route path="/teacher/:id/students" element={<TeacherStudents />} />

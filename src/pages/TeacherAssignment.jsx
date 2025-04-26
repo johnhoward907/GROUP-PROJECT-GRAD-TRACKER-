@@ -53,36 +53,53 @@ function TeacherAssignment() {
   };
 
   return (
-    <div>
-      {isFirstTime && <p>Welcome! Assign your class and subject to get started.</p>}
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Class:</label>
-          <select value={selectedClass} onChange={(e) => setSelectedClass(e.target.value)}>
-            <option value="">-- Select a class --</option>
-            <option value="North">North</option>
-            <option value="South">South</option>
-            <option value="East">East</option>
-            <option value="West">West</option>
-          </select>
-        </div>
+    <div className="form-container">
+        {isFirstTime && (
+            <p className="welcome-message">Welcome! Select your assigned class and subject to get started.</p>
+        )}
 
-        <div>
-          <label>Subject:</label>
-          <select value={selectedSubject} onChange={(e) => setSelectedSubject(e.target.value)}>
-            <option value="">-- Select a subject --</option>
-            <option value="Mathematics">Mathematics</option>
-            <option value="English">English</option>
-            <option value="Kiswahili">Kiswahili</option>
-            <option value="Science">Science</option>
-            <option value="History">History</option>
-            <option value="Geography">Geography</option>
-            <option value="Art">Art</option>
-          </select>
-        </div>
+        <form onSubmit={handleSubmit} className="assignment-form">
+            <div className="form-group">
+                <label htmlFor="class-select">Class:</label>
+                <select
+                    id="class-select"
+                    value={selectedClass}
+                    onChange={(e) => setSelectedClass(e.target.value)}
+                    className="form-select"
+                    required>
+                        <option value="">-- Select a class --</option>
+                        <option value="North">North</option>
+                        <option value="South">South</option>
+                        <option value="East">East</option>
+                        <option value="West">West</option>
+                </select>
+            </div>
 
-        <button type="submit">Save Assignment</button>
-      </form>
+            <div className="form-group">
+                <label htmlFor="subject-select">Subject:</label>
+                <select
+                    id="subject-select"
+                    value={selectedSubject}
+                    onChange={(e) => setSelectedSubject(e.target.value)}
+                    className="form-select"
+                    required>
+                        <option value="">-- Select a subject --</option>
+                        <option value="Mathematics">Mathematics</option>
+                        <option value="English">English</option>
+                        <option value="Kiswahili">Kiswahili</option>
+                        <option value="Science">Science</option>
+                        <option value="History">History</option>
+                        <option value="Geography">Geography</option>
+                        <option value="Art">Art</option>
+                </select>
+            </div>
+
+            <div className="form-actions">
+                <button type="submit" className="btn btn-primary">
+                    Save Assignment
+                </button>
+            </div>
+        </form>
     </div>
   );
 }
