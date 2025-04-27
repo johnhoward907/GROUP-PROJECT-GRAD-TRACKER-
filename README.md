@@ -44,7 +44,12 @@ their own.
 single page.
 
 ### ***FEATURES ACHIEVED***
-- 
+- Teacher and Student User authenitcation.
+- Student and Teacher user accounts.
+- Addition and deletion of grades.
+- Filtered views of grade by different users.
+- Sorting and Searching functions
+- Smooth uncluttered UI
 
 ### ***FUTURE UPGRADES***
 - Refine class and subject assignment method for teachers and class asignment for students, currently not very secure and prone to human error.
