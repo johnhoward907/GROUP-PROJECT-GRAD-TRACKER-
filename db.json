@@ -71,6 +71,15 @@
       "userType": "teacher",
       "class": "North",
       "subject": "Science"
+    },
+    {
+      "id": "T9",
+      "name": "George Mbogo",
+      "email": "george.mbogo@school.com",
+      "password": "george.mbogo",
+      "userType": "teacher",
+      "class": "West",
+      "subject": "History"
     }
   ],
   "students": [
@@ -137,6 +146,14 @@
       "password": "mbugua",
       "userType": "student",
       "class": "West"
+    },
+    {
+      "id": "S9",
+      "name": "Reagan Njoki",
+      "email": "reagan.njoki@gmail.com",
+      "password": "reagan.njoki",
+      "userType": "student",
+      "class": "North"
     }
   ],
   "grades": [
@@ -183,6 +200,61 @@
       "comments": "fdvbhfdvnfdvdvj",
       "teacherId": "T1",
       "teacherName": "Brad Crawford"
+    },
+    {
+      "id": "G8",
+      "studentId": "S5",
+      "studentName": "Alice Brown",
+      "subject": "Science",
+      "assignment": "cdsuhfbgfibgfe",
+      "grade": "87",
+      "comments": "fdvc infbfdnbfnb",
+      "teacherId": "T8",
+      "teacherName": "Timothy Nzau"
+    },
+    {
+      "id": "G9",
+      "studentId": "S6",
+      "studentName": "Stiles Stilisnki",
+      "subject": "Mathematics",
+      "assignment": "vfdmvnbnbobodb",
+      "grade": "46",
+      "comments": "fdvcn jgnbgnbngbgbgbpg;mpg",
+      "teacherId": "T6",
+      "teacherName": "Joshua KIplagat"
+    },
+    {
+      "id": "G10",
+      "studentId": "S2",
+      "studentName": "Mike Miller",
+      "subject": "Mathematics",
+      "assignment": "fvodknibvbf",
+      "grade": "89",
+      "comments": "vbgfnbonbonbngb",
+      "teacherId": "T6",
+      "teacherName": "Joshua KIplagat"
+    },
+    {
+      "id": "G11",
+      "studentId": "S6",
+      "studentName": "Stiles Stilisnki",
+      "subject": "Mathematics",
+      "assignment": "gfdbiufdbdfog",
+      "grade": "78",
+      "comments": "bgdnnfdosfgn",
+      "teacherId": "T6",
+      "teacherName": "Joshua KIplagat"
+    },
+    {
+      "id": "G12",
+      "studentId": "S2",
+      "studentName": "Mike Miller",
+      "subject": "Mathematics",
+      "assignment": "edbgfv okijunhjvdfgbv oijvgfbv ",
+      "grade": "90",
+      "comments": "fdisbonfodnsvongfnogdfd",
+      "teacherId": "T6",
+      "teacherName": "Joshua KIplagat"
     }
   ]
 }

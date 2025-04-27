@@ -57,6 +57,14 @@ function TeacherDashboard() {
         setFilteredGrades(updatedGrades);
     }, [searchQuery, filterSubject, sortOrder, grades]);
 
+    // Function to calculate average grade for a subject
+    const calculateSubjectAverage = (subject) => {
+        const subjectGrades = filteredGrades.filter(grade => grade.subject === subject);
+        if (subjectGrades.length === 0) return 0;
+        const total = subjectGrades.reduce((sum, grade) => sum + parseFloat(grade.grade), 0);
+        return (total / subjectGrades.length).toFixed(2);
+    };
+
     const handleLogout = () => {
         const confirmed = window.confirm("Are you sure you want to logout?");
         if (confirmed) {
@@ -95,6 +103,9 @@ function TeacherDashboard() {
         }
     };
 
+    // Get unique subjects
+    const uniqueSubjects = [...new Set(filteredGrades.map(grade => grade.subject))];
+
     return (
         <>
             <NavBar 
@@ -105,6 +116,7 @@ function TeacherDashboard() {
             />
             <div>
                 <h2>Welcome, {teacher?.name || "Loading..."}</h2>
+                
                 <GradeFilterBar 
                     onFilterChange={handleFilterChange} 
                     onSortChange={handleSortChange} 
@@ -114,6 +126,19 @@ function TeacherDashboard() {
                     onEdit={handleEditGrade} 
                     onDelete={handleDeleteGrade} 
                 />
+
+                {/* Class Subject Average Card */}
+                <div className="card average-card" style={{ margin: '2rem auto', padding: '1rem' }}>
+                    <h3>Class Subject Average</h3>
+                    <div className="subject-averages">
+                        {uniqueSubjects.map((subject) => (
+                            <div key={subject} className="subject-card">
+                                <h4>{subject}</h4>
+                                <p>Average Grade: {calculateSubjectAverage(subject)}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
             </div>
         </>
     );

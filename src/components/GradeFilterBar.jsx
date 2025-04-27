@@ -3,19 +3,12 @@ import '../App.css';
 
 function GradeFilterBar({ onFilterChange, onSortChange }) {
   const [searchTerm, setSearchTerm] = useState('');
-  const [subjectFilter, setSubjectFilter] = useState('');
   const [sortOrder, setSortOrder] = useState('asc');
 
   const handleSearchChange = (e) => {
     const value = e.target.value;
     setSearchTerm(value);
-    onFilterChange({ searchTerm: value, subject: subjectFilter });
-  };
-
-  const handleSubjectChange = (e) => {
-    const value = e.target.value;
-    setSubjectFilter(value);
-    onFilterChange({ searchTerm, subject: value });
+    onFilterChange({ searchTerm: value });
   };
 
   const handleSortChange = (e) => {
@@ -38,25 +31,7 @@ function GradeFilterBar({ onFilterChange, onSortChange }) {
           aria-label="Search by student name"
         />
       </div>
-      
-      <div className="filter-group">
-        <label htmlFor="subject-filter" className="filter-label">Filter by Subject</label>
-        <select
-          id="subject-filter"
-          value={subjectFilter}
-          onChange={handleSubjectChange}
-          className="filter-select"
-          aria-label="Filter by subject"
-        >
-          <option value="">All Subjects</option>
-          <option value="math">Mathematics</option>
-          <option value="english">English</option>
-          <option value="science">Science</option>
-          <option value="history">History</option>
-          <option value="art">Art</option>
-        </select>
-      </div>
-      
+
       <div className="filter-group">
         <label htmlFor="sort-order" className="filter-label">Sort Grades</label>
         <select

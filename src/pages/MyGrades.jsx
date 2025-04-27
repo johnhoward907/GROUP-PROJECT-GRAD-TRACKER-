@@ -3,29 +3,31 @@ import NavBar from '../components/NavBar';
 import GradeTable from '../components/GradeTable';
 import '../App.css';
 
-function StudentGrades() {
+function MyGrades() {
   const [grades, setGrades] = useState([]);
+  const [filteredGrades, setFilteredGrades] = useState([]);
   const [loading, setLoading] = useState(true);
-
-  // Parse logged-in user from localStorage
+  const [searchQuery, setSearchQuery] = useState('');
+  
   const user = JSON.parse(localStorage.getItem('user'));
 
   useEffect(() => {
     if (user && user.id) {
-      // Fetch grades from local db.json or API
       import('../../db.json').then((data) => {
-        // Filter grades for logged-in student by studentId
         const studentGrades = data.grades.filter(
           (grade) => grade.studentId === user.id
         );
         setGrades(studentGrades);
+        setFilteredGrades(studentGrades); // Initialize filtered grades with all data
         setLoading(false);
       }).catch(() => {
         setGrades([]);
+        setFilteredGrades([]);
         setLoading(false);
       });
     } else {
       setGrades([]);
+      setFilteredGrades([]);
       setLoading(false);
     }
   }, [user]);
@@ -38,19 +40,52 @@ function StudentGrades() {
     }
   };
 
+  const handleSearchChange = (e) => {
+    const query = e.target.value;
+    setSearchQuery(query);
+    
+    if (query) {
+      setFilteredGrades(grades.filter(grade => 
+        grade.subject.toLowerCase().includes(query.toLowerCase()) || 
+        grade.grade.toLowerCase().includes(query.toLowerCase())
+      ));
+    } else {
+      setFilteredGrades(grades);
+    }
+  };
+
+  const calculateAverage = () => {
+    if (filteredGrades.length === 0) return 0;
+
+    const total = filteredGrades.reduce((sum, grade) => sum + parseFloat(grade.grade), 0);
+    return (total / filteredGrades.length).toFixed(2);
+  };
+
   return (
     <>
-      <NavBar userType="student" handleLogout={handleLogout} />
+      <NavBar 
+        userType="student" 
+        handleLogout={handleLogout} 
+        searchQuery={searchQuery} 
+        onSearchChange={handleSearchChange} 
+      />
       <div>
         <h2>My Grades</h2>
         {loading ? (
           <p>Loading grades...</p>
         ) : (
-          <GradeTable grades={grades} onEdit={() => {}} onDelete={() => {}} isStudent={true} />
+          <>
+            <GradeTable grades={filteredGrades} onEdit={() => {}} onDelete={() => {}} isStudent={true} />
+            <div className="average-grade-container">
+              <div className="average-card">
+                <h4>Average Grade: {calculateAverage()}</h4>
+              </div>
+            </div>
+          </>
         )}
       </div>
     </>
   );
 }
 
-export default StudentGrades;
+export default MyGrades;

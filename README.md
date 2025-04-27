@@ -51,7 +51,7 @@ single page.
 - Consider an admin user/account to supervise and manage teacher and student users.
 
 ## **NECESSARY LINKS**
-- The repository for this project is is [Github Repository](https://).
+- The repository for this project is is [Github Repository](https://github.com/johnhoward907/GROUP-PROJECT-GRAD-TRACKER-).
 
 - This site was deployed using [GitHub Pages](https://).
 

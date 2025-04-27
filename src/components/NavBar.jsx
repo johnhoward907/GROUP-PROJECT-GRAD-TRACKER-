@@ -32,7 +32,7 @@ function NavBar({ userType, handleLogout, searchQuery, onSearchChange }) {
         <input
           type="search"
           className="navbar-search"
-          placeholder="Search students, grades..."
+          placeholder={userType === 'student' ? "Search subjects, grades..." : "Search students, grades..."} // Change based on user type
           aria-label="Search"
           value={searchQuery}
           onChange={onSearchChange}
