@@ -1,13 +1,7 @@
 import React from 'react';
 import '../App.css';
 
-function GradeTable({ grades, onEdit, onDelete, isStudent }) {
-  const handleDeleteConfirmation = (index) => {
-    if (window.confirm("Are you sure you want to delete this grade?")) {
-      onDelete(index);
-    }
-  };
-
+function GradeTable({ grades, onEdit, onDelete }) {
   return (
     <div className="card table-container" style={{ margin: '2rem auto', padding: '1rem' }}>
       <h2 className="table-title">Submitted Grades</h2>
@@ -22,27 +16,25 @@ function GradeTable({ grades, onEdit, onDelete, isStudent }) {
               <th>Assignment</th>
               <th>Grade</th>
               <th>Comments</th>
-              {!isStudent && <th>Actions</th>} {/* Hide actions column for students */}
+              <th>Actions</th> {/* New column for actions */}
             </tr>
           </thead>
           <tbody>
             {grades.map((entry, index) => (
               <tr key={index}>
-                <td>{entry.studentName}</td>
-                <td>{entry.subject}</td>
-                <td>{entry.assignment}</td>
-                <td>{entry.grade}</td>
-                <td>{entry.comments}</td>
-                {!isStudent && (
-                  <td className="actions-column"> {/* Style this column in CSS if needed */}
-                    <button className="btn btn-info btn-sm" onClick={() => onEdit(index)}> {/* Changed to info */}
-                      Edit
-                    </button>
-                    <button className="btn btn-danger btn-sm" onClick={() => handleDeleteConfirmation(index)}>
-                      Delete
-                    </button>
-                  </td>
-                )}
+                <td data-label="Student Name">{entry.studentName}</td>
+                <td data-label="Subject">{entry.subject}</td>
+                <td data-label="Assignment">{entry.assignment}</td>
+                <td data-label="Grade">{entry.grade}</td>
+                <td data-label="Comments">{entry.comments}</td>
+                <td className="actions-column"> {/* Style this column in CSS if needed */}
+                  <button className="btn btn-info btn-sm" onClick={() => onEdit(index)}> {/* Changed to info */}
+                    Edit
+                  </button>
+                  <button className="btn btn-danger btn-sm" onClick={() => onDelete(index)}>
+                    Delete
+                  </button>
+                </td>
               </tr>
             ))}
           </tbody>

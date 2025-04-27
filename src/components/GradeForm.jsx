@@ -1,96 +1,102 @@
 import React, { useState, useEffect } from 'react';
 import '../App.css';
 
-function GradeForm({ onSubmit, studentData, isStudent }) {
+function GradeForm({ onSubmit, studentData, isStudent, studentsList = [], teacherInfo = {} }) {
   const [formData, setFormData] = useState({
-    studentId: studentData?.id || '', // Keep if you have IDs
-    studentName: studentData?.studentName || '',
-    subject: studentData?.subject || '',
-    assignment: studentData?.assignment || '',
-    grade: studentData?.grade || '',
-    comments: studentData?.comments || ''
+    studentId: '',
+    studentName: '',
+    subject: teacherInfo.subject || '',
+    assignment: '',
+    grade: '',
+    comments: ''
   });
 
   useEffect(() => {
-    // Update form data when studentData prop changes (for editing)
-    if (studentData) {
-      setFormData({
-        studentId: studentData.id || '',
-        studentName: studentData.studentName || '',
-        subject: studentData.subject || '',
-        assignment: studentData.assignment || '',
-        grade: studentData.grade || '',
-        comments: studentData.comments || ''
-      });
-    } else {
-      // Reset form data when not editing
-      setFormData({
-        studentId: '',
-        studentName: '',
-        subject: '',
-        assignment: '',
-        grade: '',
-        comments: ''
-      });
-    }
-  }, [studentData]);
+    if (!studentData && !teacherInfo.subject) return;
+
+    setFormData(prev => {
+      const newData = {
+        studentId: studentData ? studentData.studentId || '' : prev.studentId,
+        studentName: studentData ? studentData.studentName || '' : prev.studentName,
+        subject: studentData ? studentData.subject || teacherInfo.subject || '' : teacherInfo.subject || prev.subject,
+        assignment: studentData ? studentData.assignment || '' : prev.assignment,
+        grade: studentData ? studentData.grade || '' : prev.grade,
+        comments: studentData ? studentData.comments || '' : prev.comments
+      };
+      
+      return JSON.stringify(newData) !== JSON.stringify(prev) ? newData : prev;
+    });
+  }, [studentData, teacherInfo.subject]);
 
   const handleChange = (e) => {
-    if (isStudent) return; // Prevent changes if student
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
+    if (isStudent) return;
+
+    const name = e.target.name;
+    const value = e.target.value;
+
+    if (name === "studentId") {
+      const selectedStudent = studentsList.find(student => student.id === value);
+      setFormData(prev => ({
+        ...prev,
+        studentId: value,
+        studentName: selectedStudent ? selectedStudent.studentName : '',
+      }));
+    } else {
+      setFormData(prev => ({
+        ...prev,
+        [name]: value
+      }));
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (isStudent) return; // Prevent submit if student
-    onSubmit(formData);
-    // The App component will handle resetting the form after submission/update
+    if (isStudent) return;
+
+    onSubmit({
+      ...formData,
+      teacherId: teacherInfo.id,
+      teacherName: teacherInfo.name
+    });
   };
 
   return (
     <div className="card form-container" style={{ margin: '0 auto' }}>
       <h2 className="form-title">{studentData ? 'Edit Grade' : 'Add New Grade'}</h2>
       <form onSubmit={handleSubmit}>
-        {/* ... rest of your form fields ... */}
         <div className="form-group">
-          <label htmlFor="studentName">Student Name</label>
-          <input
-            type="text"
-            id="studentName"
-            name="studentName"
-            value={formData.studentName}
+          <label htmlFor="studentId">Student Name</label>
+          <select
+            id="studentId"
+            name="studentId"
+            value={formData.studentId}
             onChange={handleChange}
             required
-            className="form-input"
+            className="form-select"
             disabled={isStudent}
+          >
+            <option value="">Select Student</option>
+            {studentsList.map(student => (
+              <option key={student.id} value={student.id}>
+                {student.studentName}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="subject">Subject</label>
+          <input
+            type="text"
+            id="subject"
+            name="subject"
+            value={formData.subject}
+            disabled
+            className="form-input"
           />
         </div>
 
         <div className="form-row">
-          <div className="form-group">
-            <label htmlFor="subject">Subject</label>
-            <select
-              id="subject"
-              name="subject"
-              value={formData.subject}
-              onChange={handleChange}
-              required
-              className="form-select"
-              disabled={isStudent}
-            >
-              <option value="">Select Subject</option>
-              <option value="math">Mathematics</option>
-              <option value="english">English</option>
-              <option value="science">Science</option>
-              <option value="history">History</option>
-              <option value="art">Art</option>
-            </select>
-          </div>
-
           <div className="form-group">
             <label htmlFor="grade">Grade</label>
             <input

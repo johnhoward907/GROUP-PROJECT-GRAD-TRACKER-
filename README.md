@@ -47,7 +47,7 @@ single page.
 - 
 
 ### ***FUTURE UPGRADES***
-- Refine class and subject assignment method for teachers and class asignment for students.
+- Refine class and subject assignment method for teachers and class asignment for students, currently not very secure and prone to human error.
 - Consider an admin user/account to supervise and manage teacher and student users.
 
 ## **NECESSARY LINKS**

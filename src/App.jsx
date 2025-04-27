@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import LandingPage from './pages/LandingPage';
 import LoginForm from "./pages/LoginForm";
 import SignUpForm from './pages/SignUpForm';
+
 import TeacherDashboard from './pages/TeacherDashboard';
 import TeacherProfile from './pages/TeacherProfile';
 import TeacherStudents from './pages/TeacherStudents';
@@ -13,29 +14,16 @@ import StudentProfile from './pages/StudentProfile';
 import MyGrades from './pages/MyGrades';
 
 import NavBar from './components/NavBar';
-import GradeFilterBar from './components/GradeFilterBar';
 import GradeForm from './components/GradeForm';
+import GradeFilterBar from './components/GradeFilterBar';
 import GradeTable from './components/GradeTable';
 import './App.css';
 
 function GroupWorkLayout() {
-  const [grades, setGrades] = useState([]);
-  const [filters, setFilters] = useState({
-    searchTerm: '',
-    subject: '',
-    sortOrder: 'asc'
-  });
+  //Grade Form
   const [showForm, setShowForm] = useState(false);
   const [editingIndex, setEditingIndex] = useState(null);
   const [editingGrade, setEditingGrade] = useState(null);
-
-  const handleFilterChange = (newFilters) => {
-    setFilters({ ...filters, ...newFilters });
-  };
-
-  const handleSortChange = (sortOrder) => {
-    setFilters({ ...filters, sortOrder });
-  };
 
   const handleGradeSubmit = (gradeData) => {
     if (editingIndex !== null) {
@@ -57,6 +45,28 @@ function GroupWorkLayout() {
     setEditingIndex(null); // Reset editing state when form is closed
     setEditingGrade(null);
   };
+
+
+
+  const [grades, setGrades] = useState([]);
+  const [filters, setFilters] = useState({
+    searchTerm: '',
+    subject: '',
+    sortOrder: 'asc'
+  });
+  
+
+  const handleFilterChange = (newFilters) => {
+    setFilters({ ...filters, ...newFilters });
+  };
+
+  const handleSortChange = (sortOrder) => {
+    setFilters({ ...filters, sortOrder });
+  };
+
+
+  //Grade Form
+  
 
   const handleEdit = (index) => {
     setEditingIndex(index);
@@ -96,14 +106,13 @@ function GroupWorkLayout() {
           onSortChange={handleSortChange}
         />
 
-        {/* Add/Cancel Button */}
+        {/* Form Add/Cancel Button */}
         <div className="button-container">
           <button
             onClick={toggleForm}
             className="btn btn-primary"
             aria-expanded={showForm}
-            aria-controls="grade-form"
-          >
+            aria-controls="grade-form">
             {showForm ? 'Cancel' : 'Add New Grade'}
           </button>
         </div>
@@ -121,8 +130,6 @@ function GroupWorkLayout() {
           onEdit={handleEdit} // Pass the edit function
           onDelete={handleDelete} // Pass the delete function
         />
-
-        {/* Other content can go here */}
       </main>
     </>
   );

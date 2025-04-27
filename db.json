@@ -44,6 +44,33 @@
       "userType": "teacher",
       "class": "West",
       "subject": "Geography"
+    },
+    {
+      "id": "T6",
+      "name": "Joshua KIplagat",
+      "email": "kip.josh@school.com",
+      "password": "joshy",
+      "userType": "teacher",
+      "class": "South",
+      "subject": "Mathematics"
+    },
+    {
+      "id": "T7",
+      "name": "Hannah McKenna",
+      "email": "mckennie@school.com",
+      "password": "hannahkennie",
+      "userType": "teacher",
+      "class": "West",
+      "subject": "Kiswahili"
+    },
+    {
+      "id": "T8",
+      "name": "Timothy Nzau",
+      "email": "timo.nzau@school.com",
+      "password": "Timon",
+      "userType": "teacher",
+      "class": "North",
+      "subject": "Science"
     }
   ],
   "students": [
@@ -94,7 +121,68 @@
       "password": "miezyslaw",
       "userType": "student",
       "class": "South"
+    },
+    {
+      "id": "S7",
+      "name": "Jeff Omondi",
+      "email": "omosh.jeff@student.com",
+      "password": "omoshjeff",
+      "userType": "student",
+      "class": "East"
+    },
+    {
+      "id": "S8",
+      "name": "Yvonne Mbugua",
+      "email": "yvie.mbugua@student.com",
+      "password": "mbugua",
+      "userType": "student",
+      "class": "West"
     }
   ],
-  "grades": []
+  "grades": [
+    {
+      "id": "G2",
+      "studentId": "S6",
+      "studentName": "Stiles Stilisnki",
+      "subject": "History",
+      "assignment": "GBGNHG MGFNGDBFXVZ",
+      "grade": "54",
+      "comments": "DSFBGFNHGMHNGBFXV",
+      "teacherId": "T1",
+      "teacherName": "Brad Crawford"
+    },
+    {
+      "id": "G5",
+      "studentId": "S6",
+      "studentName": "Stiles Stilisnki",
+      "subject": "History",
+      "assignment": "HGNFCNFBNGFBNF",
+      "grade": "35",
+      "comments": "DFBFNHGMMJMJMGJ",
+      "teacherId": "T1",
+      "teacherName": "Brad Crawford"
+    },
+    {
+      "id": "G6",
+      "studentId": "S2",
+      "studentName": "Mike Miller",
+      "subject": "History",
+      "assignment": "vfdcnhbjvf ",
+      "grade": "57",
+      "comments": "vgf jn bvfg jnkgf bv",
+      "teacherId": "T1",
+      "teacherName": "Brad Crawford"
+    },
+    {
+      "id": "G7",
+      "studentId": "S2",
+      "studentName": "Mike Miller",
+      "subject": "History",
+      "assignment": "frvd cnhbfnndvod",
+      "grade": "90",
+      "comments": "fdvbhfdvnfdvdvj",
+      "teacherId": "T1",
+      "teacherName": "Brad Crawford"
+    }
+  ]
 }
