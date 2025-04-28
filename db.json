@@ -968,6 +968,174 @@
       "comments": "Needs more work. Review optimization methods and examples.",
       "teacherId": "T6",
       "teacherName": "Joshua KIplagat"
+    },
+    {
+      "id": "G1",
+      "studentId": "S1",
+      "studentName": "Clay Walker",
+      "subject": "Kiswahili",
+      "assignment": "Riwaya ya Kiswahili - Kufa Kuzikana",
+      "grade": "85",
+      "comments": "Mazungumzo yalikuwa mazuri, lakini inahitaji ufanisi zaidi katika uchambuzi.",
+      "teacherId": "T1",
+      "teacherName": "Brad Crawford"
+    },
+    {
+      "id": "G2",
+      "studentId": "S2",
+      "studentName": "Mike Miller",
+      "subject": "Kiswahili",
+      "assignment": "Insha ya Kiswahili - Maadili ya Jamii",
+      "grade": "78",
+      "comments": "Insha nzuri, lakini tafadhali zingatia mifano zaidi ya jamii halisi.",
+      "teacherId": "T2",
+      "teacherName": "Tina Mwangi"
+    },
+    {
+      "id": "G3",
+      "studentId": "S3",
+      "studentName": "Jane Doe",
+      "subject": "Kiswahili",
+      "assignment": "Hekaya za Kiswahili - Hadithi ya Mwanaume na Samaki",
+      "grade": "92",
+      "comments": "Hadithi imetolewa vizuri na ina maana kubwa, endelea kufanya kazi nzuri.",
+      "teacherId": "T3",
+      "teacherName": "John Kibaki"
+    },
+    {
+      "id": "G4",
+      "studentId": "S4",
+      "studentName": "James Kiplagat",
+      "subject": "Kiswahili",
+      "assignment": "Methali na Nahau - Ufafanuzi wa Methali",
+      "grade": "88",
+      "comments": "Mazungumzo yako yana ufafanuzi mzuri, lakini uangalie mifano ya kisasa.",
+      "teacherId": "T4",
+      "teacherName": "Samuel Njiru"
+    },
+    {
+      "id": "G5",
+      "studentId": "S5",
+      "studentName": "Sarah Mwaura",
+      "subject": "Kiswahili",
+      "assignment": "Hekaya - Mfalme na Maskini",
+      "grade": "76",
+      "comments": "Hadithi ina muundo mzuri, lakini ingekuwa bora zaidi ikiwa kuna mifano mingi zaidi.",
+      "teacherId": "T5",
+      "teacherName": "Ruth Wambui"
+    },
+    {
+      "id": "G6",
+      "studentId": "S6",
+      "studentName": "Stiles Stilisnki",
+      "subject": "Kiswahili",
+      "assignment": "Insha - Maendeleo ya Kiswahili Katika Jamii",
+      "grade": "84",
+      "comments": "Insha ina ufahamu mzuri wa maendeleo, lakini unahitaji kuongeza mifano ya kisasa.",
+      "teacherId": "T2",
+      "teacherName": "Tina Mwangi"
+    },
+    {
+      "id": "G7",
+      "studentId": "S7",
+      "studentName": "Carlos Mwaura",
+      "subject": "Kiswahili",
+      "assignment": "Riwaya - Hadithi ya Nguvu za Amani",
+      "grade": "91",
+      "comments": "Inafurahisha na inafaa, lakini baadhi ya vipengele vingeweza kuboreshwa.",
+      "teacherId": "T6",
+      "teacherName": "Wangari Gikandi"
+    },
+    {
+      "id": "G8",
+      "studentId": "S8",
+      "studentName": "Mike Kimani",
+      "subject": "Kiswahili",
+      "assignment": "Methali - Hadithi za Methali",
+      "grade": "82",
+      "comments": "Mazungumzo yako ni bora, lakini changamoto za kisasa zingehitajika.",
+      "teacherId": "T4",
+      "teacherName": "Samuel Njiru"
+    },
+    {
+      "id": "G9",
+      "studentId": "S9",
+      "studentName": "Linda Mutinda",
+      "subject": "Kiswahili",
+      "assignment": "Insha ya Kiswahili - Maadili ya Familia",
+      "grade": "89",
+      "comments": "Insha imetumwa vizuri, lakini inahitaji mifano zaidi ya maisha halisi.",
+      "teacherId": "T1",
+      "teacherName": "Brad Crawford"
+    },
+    {
+      "id": "G10",
+      "studentId": "S10",
+      "studentName": "Carlos Mwaura",
+      "subject": "Kiswahili",
+      "assignment": "Riwaya ya Kiswahili - Mateso ya Moyo",
+      "grade": "79",
+      "comments": "Hadithi nzuri, lakini baadhi ya vipengele vya kihisia vingeweza kuwa bora.",
+      "teacherId": "T3",
+      "teacherName": "John Kibaki"
+    },
+    {
+      "id": "G11",
+      "studentId": "S11",
+      "studentName": "Linda Kinyua",
+      "subject": "Kiswahili",
+      "assignment": "Insha - Miundo ya Kiufasaha",
+      "grade": "83",
+      "comments": "Insha ina mantiki nzuri, lakini masuala ya mtindo yangeweza kuboreshwa.",
+      "teacherId": "T5",
+      "teacherName": "Ruth Wambui"
+    },
+    {
+      "id": "G12",
+      "studentId": "S12",
+      "studentName": "Carlos Mwaura",
+      "subject": "Kiswahili",
+      "assignment": "Methali - Ufafanuzi na Matumizi",
+      "grade": "75",
+      "comments": "Mazungumzo yako ni mazuri, lakini yanahitaji mifano zaidi ya methali za kisasa.",
+      "teacherId": "T2",
+      "teacherName": "Tina Mwangi"
+    },
+    {
+      "id": "G13",
+      "studentId": "S13",
+      "studentName": "Amy Zhang",
+      "subject": "Kiswahili",
+      "assignment": "Hekaya - Hadithi ya Mfalme na Mfanyabiashara",
+      "grade": "90",
+      "comments": "Hadithi imetungwa vizuri na inafundisha maadili mazuri.",
+      "teacherId": "T6",
+      "teacherName": "Wangari Gikandi"
+    },
+    {
+      "id": "G14",
+      "studentId": "S14",
+      "studentName": "David Kimani",
+      "subject": "Kiswahili",
+      "assignment": "Insha - Upendo na Familia",
+      "grade": "81",
+      "comments": "Insha yako inatoa wazo zuri, lakini baadhi ya sehemu zinahitaji kuboreshwa.",
+      "teacherId": "T4",
+      "teacherName": "Samuel Njiru"
+    },
+    {
+      "id": "G15",
+      "studentId": "S15",
+      "studentName": "Maya Patel",
+      "subject": "Kiswahili",
+      "assignment": "Riwaya - Safari ya Kidato cha Pili",
+      "grade": "80",
+      "comments": "Riwaya yako ni nzuri, lakini inahitaji ufanisi zaidi katika maandishi.",
+      "teacherId": "T5",
+      "teacherName": "Ruth Wambui"
     }
-  ]  
+
+
+  ]
+   
 }
