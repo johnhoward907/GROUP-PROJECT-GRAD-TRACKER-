@@ -9,18 +9,20 @@ function MyGrades() {
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
   
-  const user = JSON.parse(localStorage.getItem('user'));
+  const [user] = useState(() => JSON.parse(localStorage.getItem('user')));
 
   useEffect(() => {
+    // Ensure the user exists and has an ID
     if (user && user.id) {
       import('../../db.json').then((data) => {
-        const studentGrades = data.grades.filter(
+        const studentGrades = data.grades?.filter(
           (grade) => grade.studentId === user.id
-        );
+        ) || [];
         setGrades(studentGrades);
-        setFilteredGrades(studentGrades); // Initialize filtered grades with all data
+        setFilteredGrades(studentGrades);
         setLoading(false);
-      }).catch(() => {
+      }).catch((error) => {
+        console.error('Error loading grades:', error);
         setGrades([]);
         setFilteredGrades([]);
         setLoading(false);
@@ -30,7 +32,7 @@ function MyGrades() {
       setFilteredGrades([]);
       setLoading(false);
     }
-  }, [user]);
+  }, [user]); 
 
   const handleLogout = () => {
     const confirmed = window.confirm("Are you sure you want to logout?");
@@ -41,14 +43,19 @@ function MyGrades() {
   };
 
   const handleSearchChange = (e) => {
-    const query = e.target.value;
+    const query = e.target.value.toLowerCase();
     setSearchQuery(query);
     
     if (query) {
-      setFilteredGrades(grades.filter(grade => 
-        grade.subject.toLowerCase().includes(query.toLowerCase()) || 
-        grade.grade.toLowerCase().includes(query.toLowerCase())
-      ));
+      setFilteredGrades(grades.filter(grade => {
+        // Check all searchable fields
+        return (
+          (grade.subject?.toLowerCase().includes(query) ?? false) ||
+          (String(grade.grade).toLowerCase().includes(query) ||
+          (grade.assignment?.toLowerCase().includes(query) ?? false) ||
+          (grade.comments?.toLowerCase().includes(query) ?? false)
+        ));
+      }));
     } else {
       setFilteredGrades(grades);
     }
@@ -56,8 +63,13 @@ function MyGrades() {
 
   const calculateAverage = () => {
     if (filteredGrades.length === 0) return 0;
-
-    const total = filteredGrades.reduce((sum, grade) => sum + parseFloat(grade.grade), 0);
+    const total = filteredGrades.reduce((sum, grade) => {
+      // Ensure grade is a number
+      const gradeValue = typeof grade.grade === 'string' 
+        ? parseFloat(grade.grade.replace(/[^0-9.]/g, '')) 
+        : Number(grade.grade);
+      return sum + (isNaN(gradeValue) ? 0 : gradeValue);
+    }, 0);
     return (total / filteredGrades.length).toFixed(2);
   };
 
@@ -75,6 +87,11 @@ function MyGrades() {
           <p>Loading grades...</p>
         ) : (
           <>
+            {searchQuery && (
+              <p className="search-results-info">
+                Showing {filteredGrades.length} of {grades.length} grades matching "{searchQuery}"
+              </p>
+            )}
             <GradeTable grades={filteredGrades} onEdit={() => {}} onDelete={() => {}} isStudent={true} />
             <div className="average-grade-container">
               <div className="average-card">
