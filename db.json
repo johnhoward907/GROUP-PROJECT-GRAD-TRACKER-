@@ -80,6 +80,60 @@
       "userType": "teacher",
       "class": "West",
       "subject": "History"
+    },
+    {
+      "id": "T10",
+      "name": "Sarah Njiru",
+      "email": "sarahnjiru@school.com",
+      "password": "sarah123",
+      "userType": "teacher",
+      "class": "East",
+      "subject": "Science"
+    },
+    {
+      "id": "T11",
+      "name": "Michael Kinuthia",
+      "email": "michaelk@school.com",
+      "password": "mike123",
+      "userType": "teacher",
+      "class": "South",
+      "subject": "Physics"
+    },
+    {
+      "id": "T12",
+      "name": "Eva Mwangi",
+      "email": "eva.mwangi@school.com",
+      "password": "eva123",
+      "userType": "teacher",
+      "class": "West",
+      "subject": "English"
+    },
+    {
+      "id": "T13",
+      "name": "Daniel Gitau",
+      "email": "daniel.gitau@school.com",
+      "password": "danielgitau",
+      "userType": "teacher",
+      "class": "North",
+      "subject": "Biology"
+    },
+    {
+      "id": "T14",
+      "name": "Jessica Ochieng",
+      "email": "jessica.ochieng@school.com",
+      "password": "jessica123",
+      "userType": "teacher",
+      "class": "East",
+      "subject": "History"
+    },
+    {
+      "id": "T15",
+      "name": "Henry Mutua",
+      "email": "henrymutua@school.com",
+      "password": "henry123",
+      "userType": "teacher",
+      "class": "South",
+      "subject": "Chemistry"
     }
   ],
   "students": [
@@ -154,107 +208,766 @@
       "password": "reagan.njoki",
       "userType": "student",
       "class": "North"
+    },
+    {
+      "id": "S10",
+      "name": "Carlos Mwaura",
+      "email": "carlosmwaura@student.com",
+      "password": "carlos123",
+      "userType": "student",
+      "class": "East"
+    },
+    {
+      "id": "S11",
+      "name": "Linda Mutinda",
+      "email": "lindamutinda@student.com",
+      "password": "linda123",
+      "userType": "student",
+      "class": "South"
+    },
+    {
+      "id": "S12",
+      "name": "Daniel Kimani",
+      "email": "daniel.kimani@student.com",
+      "password": "daniel123",
+      "userType": "student",
+      "class": "West"
+    },
+    {
+      "id": "S13",
+      "name": "Monica Karanja",
+      "email": "monica.karanja@student.com",
+      "password": "monica123",
+      "userType": "student",
+      "class": "North"
+    },
+    {
+      "id": "S14",
+      "name": "Victor Otieno",
+      "email": "victor.otieno@student.com",
+      "password": "victor123",
+      "userType": "student",
+      "class": "East"
+    },
+    {
+      "id": "S15",
+      "name": "Grace Wambui",
+      "email": "grace.wambui@student.com",
+      "password": "grace123",
+      "userType": "student",
+      "class": "South"
+    },
+    {
+      "id": "S16",
+      "name": "Linda Kinyua",
+      "email": "lindakinyua@school.com",
+      "password": "linda456",
+      "userType": "student",
+      "class": "West"
+    },
+    {
+      "id": "S17",
+      "name": "Felix Wambua",
+      "email": "felix.wambua@student.com",
+      "password": "felix123",
+      "userType": "student",
+      "class": "North"
+    },
+    {
+      "id": "S18",
+      "name": "Timothy Juma",
+      "email": "timothy.juma@student.com",
+      "password": "timothy678",
+      "userType": "student",
+      "class": "East"
+    },
+    {
+      "id": "S19",
+      "name": "Maggie Okumu",
+      "email": "maggie.okumu@student.com",
+      "password": "maggie123",
+      "userType": "student",
+      "class": "South"
+    },
+    {
+      "id": "S20",
+      "name": "Moses Kioko",
+      "email": "moses.kioko@student.com",
+      "password": "moseskioko123",
+      "userType": "student",
+      "class": "West"
+    },
+    {
+      "id": "S21",
+      "name": "John Ochieng",
+      "email": "john.ochieng@student.com",
+      "password": "johnny123",
+      "userType": "student",
+      "class": "North"
+    },
+    {
+      "id": "S22",
+      "name": "Evelyn Wangari",
+      "email": "evelyn.wangari@student.com",
+      "password": "eve123",
+      "userType": "student",
+      "class": "South"
+    },
+    {
+      "id": "S23",
+      "name": "Maxwell Njiru",
+      "email": "maxwell.njiru@student.com",
+      "password": "max123",
+      "userType": "student",
+      "class": "East"
+    },
+    {
+      "id": "S24",
+      "name": "Valentine Kamau",
+      "email": "valentine.kamau@student.com",
+      "password": "valentine123",
+      "userType": "student",
+      "class": "West"
+    },
+    {
+      "id": "S25",
+      "name": "Sharon Mumbi",
+      "email": "sharon.mumbi@student.com",
+      "password": "sharon123",
+      "userType": "student",
+      "class": "North"
+    },
+    {
+      "id": "S26",
+      "name": "Daniela Mwanzia",
+      "email": "daniela.mwanzia@student.com",
+      "password": "daniela123",
+      "userType": "student",
+      "class": "South"
+    },
+    {
+      "id": "S27",
+      "name": "Frankline Gikandi",
+      "email": "frankline.gikandi@student.com",
+      "password": "frankline123",
+      "userType": "student",
+      "class": "East"
+    },
+    {
+      "id": "S28",
+      "name": "Rosemary Njeri",
+      "email": "rosemary.njeri@student.com",
+      "password": "rosemary123",
+      "userType": "student",
+      "class": "West"
+    },
+    {
+      "id": "S29",
+      "name": "Joshua Waithera",
+      "email": "joshua.waithera@student.com",
+      "password": "joshua123",
+      "userType": "student",
+      "class": "North"
+    },
+    {
+      "id": "S30",
+      "name": "Shiro Wanjiku",
+      "email": "shiro.wanjiku@student.com",
+      "password": "shiro123",
+      "userType": "student",
+      "class": "South"
+    },
+    {
+      "id": "S31",
+      "name": "Benjamin Mwangi",
+      "email": "benjamin.mwangi@student.com",
+      "password": "benjamin123",
+      "userType": "student",
+      "class": "East"
+    },
+    {
+      "id": "S32",
+      "name": "Jacqueline Kibwana",
+      "email": "jacqueline.kibwana@student.com",
+      "password": "jacqueline123",
+      "userType": "student",
+      "class": "West"
+    },
+    {
+      "id": "S33",
+      "name": "Chris Mwai",
+      "email": "chris.mwai@student.com",
+      "password": "chris123",
+      "userType": "student",
+      "class": "North"
+    },
+    {
+      "id": "S34",
+      "name": "Ann Muthoni",
+      "email": "ann.muthoni@student.com",
+      "password": "ann123",
+      "userType": "student",
+      "class": "South"
+    },
+    {
+      "id": "S35",
+      "name": "Joseph Kimutai",
+      "email": "joseph.kimutai@student.com",
+      "password": "joseph123",
+      "userType": "student",
+      "class": "East"
+    },
+    {
+      "id": "S36",
+      "name": "Joan Wambui",
+      "email": "joan.wambui@student.com",
+      "password": "joan123",
+      "userType": "student",
+      "class": "West"
+    },
+    {
+      "id": "S37",
+      "name": "Patrick Kamau",
+      "email": "patrick.kamau@student.com",
+      "password": "patrick123",
+      "userType": "student",
+      "class": "North"
+    },
+    {
+      "id": "S38",
+      "name": "Emma Nyambura",
+      "email": "emma.nyambura@student.com",
+      "password": "emma123",
+      "userType": "student",
+      "class": "South"
+    },
+    {
+      "id": "S39",
+      "name": "Douglas Mwanzia",
+      "email": "douglas.mwanzia@student.com",
+      "password": "douglas123",
+      "userType": "student",
+      "class": "East"
+    },
+    {
+      "id": "S40",
+      "name": "Njeri Muthee",
+      "email": "njeri.muthee@student.com",
+      "password": "njeri123",
+      "userType": "student",
+      "class": "West"
+    },
+    {
+      "id": "S41",
+      "name": "Peter Okoth",
+      "email": "peter.okoth@student.com",
+      "password": "peter123",
+      "userType": "student",
+      "class": "North"
+    },
+    {
+      "id": "S42",
+      "name": "Faith Kamande",
+      "email": "faith.kamande@student.com",
+      "password": "faith123",
+      "userType": "student",
+      "class": "South"
+    },
+    {
+      "id": "S43",
+      "name": "Anthony Gikonyo",
+      "email": "anthony.gikonyo@student.com",
+      "password": "anthony123",
+      "userType": "student",
+      "class": "East"
+    },
+    {
+      "id": "S44",
+      "name": "Cynthia Wairimu",
+      "email": "cynthia.wairimu@student.com",
+      "password": "cynthia123",
+      "userType": "student",
+      "class": "West"
+    },
+    {
+      "id": "S45",
+      "name": "Brian Mutua",
+      "email": "brian.mutua@student.com",
+      "password": "brian123",
+      "userType": "student",
+      "class": "North"
+    },
+    {
+      "id": "S46",
+      "name": "Mercy Nyakio",
+      "email": "mercy.nyakio@student.com",
+      "password": "mercy123",
+      "userType": "student",
+      "class": "South"
+    },
+    {
+      "id": "S47",
+      "name": "Kennedy Mwangi",
+      "email": "kennedy.mwangi@student.com",
+      "password": "kennedy123",
+      "userType": "student",
+      "class": "East"
+    },
+    {
+      "id": "S48",
+      "name": "Dorothy Kanyiri",
+      "email": "dorothy.kanyiri@student.com",
+      "password": "dorothy123",
+      "userType": "student",
+      "class": "West"
+    },
+    {
+      "id": "S49",
+      "name": "Sammy Waweru",
+      "email": "sammy.waweru@student.com",
+      "password": "sammy123",
+      "userType": "student",
+      "class": "North"
+    },
+    {
+      "id": "S50",
+      "name": "Linda Kiarie",
+      "email": "linda.kiarie@student.com",
+      "password": "linda123",
+      "userType": "student",
+      "class": "South"
     }
-  ],
+  ]
+  ,
   "grades": [
     {
       "id": "G2",
       "studentId": "S6",
       "studentName": "Stiles Stilisnki",
       "subject": "History",
-      "assignment": "GBGNHG MGFNGDBFXVZ",
+      "assignment": "Battle of Waterloo Essay",
       "grade": "54",
-      "comments": "DSFBGFNHGMHNGBFXV",
+      "comments": "Needs improvement, but a solid attempt. Focus more on analysis.",
+      "teacherId": "T1",
+      "teacherName": "Brad Crawford"
+    },
+    {
+      "id": "G3",
+      "studentId": "S2",
+      "studentName": "Mike Miller",
+      "subject": "History",
+      "assignment": "World War II Overview",
+      "grade": "87",
+      "comments": "Well-researched, but some points could use clearer explanations.",
+      "teacherId": "T1",
+      "teacherName": "Brad Crawford"
+    },
+    {
+      "id": "G4",
+      "studentId": "S3",
+      "studentName": "Jane Doe",
+      "subject": "History",
+      "assignment": "Ancient Civilizations",
+      "grade": "92",
+      "comments": "Excellent work! Detailed and clear presentation of information.",
       "teacherId": "T1",
       "teacherName": "Brad Crawford"
     },
     {
       "id": "G5",
-      "studentId": "S6",
-      "studentName": "Stiles Stilisnki",
-      "subject": "History",
-      "assignment": "HGNFCNFBNGFBNF",
-      "grade": "35",
-      "comments": "DFBFNHGMMJMJMGJ",
-      "teacherId": "T1",
-      "teacherName": "Brad Crawford"
-    },
-    {
-      "id": "G6",
-      "studentId": "S2",
-      "studentName": "Mike Miller",
-      "subject": "History",
-      "assignment": "vfdcnhbjvf ",
-      "grade": "57",
-      "comments": "vgf jn bvfg jnkgf bv",
-      "teacherId": "T1",
-      "teacherName": "Brad Crawford"
-    },
-    {
-      "id": "G7",
-      "studentId": "S2",
-      "studentName": "Mike Miller",
-      "subject": "History",
-      "assignment": "frvd cnhbfnndvod",
-      "grade": "90",
-      "comments": "fdvbhfdvnfdvdvj",
-      "teacherId": "T1",
-      "teacherName": "Brad Crawford"
-    },
-    {
-      "id": "G8",
-      "studentId": "S5",
-      "studentName": "Alice Brown",
+      "studentId": "S10",
+      "studentName": "Carlos Mwaura",
       "subject": "Science",
-      "assignment": "cdsuhfbgfibgfe",
-      "grade": "87",
-      "comments": "fdvc infbfdnbfnb",
+      "assignment": "Chemistry Lab Report",
+      "grade": "78",
+      "comments": "Good effort but missed some key experimental details.",
       "teacherId": "T8",
       "teacherName": "Timothy Nzau"
     },
     {
-      "id": "G9",
-      "studentId": "S6",
-      "studentName": "Stiles Stilisnki",
+      "id": "G6",
+      "studentId": "S11",
+      "studentName": "Linda Mutinda",
       "subject": "Mathematics",
-      "assignment": "vfdmvnbnbobodb",
-      "grade": "46",
-      "comments": "fdvcn jgnbgnbngbgbgbpg;mpg",
+      "assignment": "Calculus Problem Set",
+      "grade": "89",
+      "comments": "Great problem-solving skills, but take extra care with notation.",
       "teacherId": "T6",
       "teacherName": "Joshua KIplagat"
     },
     {
+      "id": "G7",
+      "studentId": "S16",
+      "studentName": "Linda Kinyua",
+      "subject": "Geography",
+      "assignment": "Map Skills Test",
+      "grade": "64",
+      "comments": "Needs to work on map reading skills. Review the resources provided.",
+      "teacherId": "T5",
+      "teacherName": "Frank Daniel"
+    },
+    {
+      "id": "G8",
+      "studentId": "S1",
+      "studentName": "Clay Walker",
+      "subject": "History",
+      "assignment": "French Revolution Analysis",
+      "grade": "75",
+      "comments": "Good overall, but could expand on key events. Work on transitions.",
+      "teacherId": "T1",
+      "teacherName": "Brad Crawford"
+    },
+    {
+      "id": "G9",
+      "studentId": "S12",
+      "studentName": "John Smith",
+      "subject": "Science",
+      "assignment": "Physics Experiment Results",
+      "grade": "83",
+      "comments": "Clear data, but explanation of results could be more thorough.",
+      "teacherId": "T8",
+      "teacherName": "Timothy Nzau"
+    },
+    {
       "id": "G10",
-      "studentId": "S2",
-      "studentName": "Mike Miller",
+      "studentId": "S13",
+      "studentName": "Amy Zhang",
       "subject": "Mathematics",
-      "assignment": "fvodknibvbf",
-      "grade": "89",
-      "comments": "vbgfnbonbonbngb",
+      "assignment": "Linear Algebra Assignment",
+      "grade": "92",
+      "comments": "Excellent grasp of the concepts. Just be mindful of edge cases.",
       "teacherId": "T6",
       "teacherName": "Joshua KIplagat"
     },
     {
       "id": "G11",
-      "studentId": "S6",
-      "studentName": "Stiles Stilisnki",
+      "studentId": "S14",
+      "studentName": "David Kimani",
+      "subject": "Geography",
+      "assignment": "Global Climate Change Report",
+      "grade": "88",
+      "comments": "Great research, but could use more in-depth analysis of climate models.",
+      "teacherId": "T5",
+      "teacherName": "Frank Daniel"
+    },
+    {
+      "id": "G12",
+      "studentId": "S15",
+      "studentName": "Maya Patel",
+      "subject": "History",
+      "assignment": "Ancient Egypt and its Pyramids",
+      "grade": "79",
+      "comments": "Well-written but lacks depth. Explore more historical context.",
+      "teacherId": "T1",
+      "teacherName": "Brad Crawford"
+    },
+    {
+      "id": "G13",
+      "studentId": "S17",
+      "studentName": "Eliot Brown",
       "subject": "Mathematics",
-      "assignment": "gfdbiufdbdfog",
-      "grade": "78",
-      "comments": "bgdnnfdosfgn",
+      "assignment": "Differential Equations Quiz",
+      "grade": "90",
+      "comments": "Very strong performance. Keep practicing complex integrals.",
       "teacherId": "T6",
       "teacherName": "Joshua KIplagat"
     },
     {
-      "id": "G12",
-      "studentId": "S2",
-      "studentName": "Mike Miller",
+      "id": "G14",
+      "studentId": "S18",
+      "studentName": "Sophia Johnson",
+      "subject": "Science",
+      "assignment": "Genetics Research Paper",
+      "grade": "82",
+      "comments": "Solid paper. Consider expanding on gene therapy research.",
+      "teacherId": "T8",
+      "teacherName": "Timothy Nzau"
+    },
+    {
+      "id": "G15",
+      "studentId": "S19",
+      "studentName": "Daniel Kioko",
+      "subject": "Geography",
+      "assignment": "Urbanization Effects on Ecosystems",
+      "grade": "91",
+      "comments": "Excellent analysis! A deeper look into local case studies could enhance it.",
+      "teacherId": "T5",
+      "teacherName": "Frank Daniel"
+    },
+    {
+      "id": "G16",
+      "studentId": "S20",
+      "studentName": "Lily Wambui",
       "subject": "Mathematics",
-      "assignment": "edbgfv okijunhjvdfgbv oijvgfbv ",
-      "grade": "90",
-      "comments": "fdisbonfodnsvongfnogdfd",
+      "assignment": "Probability and Statistics",
+      "grade": "85",
+      "comments": "Good understanding. Try to solve problems with a more varied approach.",
+      "teacherId": "T6",
+      "teacherName": "Joshua KIplagat"
+    },
+    {
+      "id": "G17",
+      "studentId": "S21",
+      "studentName": "Nashit Aziz",
+      "subject": "History",
+      "assignment": "Impact of the Industrial Revolution",
+      "grade": "65",
+      "comments": "Basic understanding, but lacks detailed examples. Needs more evidence.",
+      "teacherId": "T1",
+      "teacherName": "Brad Crawford"
+    },
+    {
+      "id": "G18",
+      "studentId": "S22",
+      "studentName": "Zoe Lee",
+      "subject": "Geography",
+      "assignment": "Cartography and Mapping Techniques",
+      "grade": "77",
+      "comments": "Well done, but make sure you focus on precision in map scale.",
+      "teacherId": "T5",
+      "teacherName": "Frank Daniel"
+    },
+    {
+      "id": "G19",
+      "studentId": "S23",
+      "studentName": "Kevin Mutiso",
+      "subject": "Science",
+      "assignment": "Biology Lab Report",
+      "grade": "74",
+      "comments": "Adequate. Missing a few critical details in experiment design.",
+      "teacherId": "T8",
+      "teacherName": "Timothy Nzau"
+    },
+    {
+      "id": "G20",
+      "studentId": "S24",
+      "studentName": "Grace Otieno",
+      "subject": "Mathematics",
+      "assignment": "Vector Calculus Problem Set",
+      "grade": "91",
+      "comments": "Well done! Make sure to review your vector analysis for full clarity.",
+      "teacherId": "T6",
+      "teacherName": "Joshua KIplagat"
+    },
+    {
+      "id": "G21",
+      "studentId": "S25",
+      "studentName": "Rita Njeri",
+      "subject": "History",
+      "assignment": "The Role of Women in the Renaissance",
+      "grade": "85",
+      "comments": "Good work, but dive deeper into specific historical figures.",
+      "teacherId": "T1",
+      "teacherName": "Brad Crawford"
+    },
+    {
+      "id": "G22",
+      "studentId": "S26",
+      "studentName": "Maxwell Okello",
+      "subject": "Science",
+      "assignment": "Physics Lab - Forces and Motion",
+      "grade": "79",
+      "comments": "Clear understanding but lacked full detail on force diagrams.",
+      "teacherId": "T8",
+      "teacherName": "Timothy Nzau"
+    },
+    {
+      "id": "G23",
+      "studentId": "S27",
+      "studentName": "Amina Hassan",
+      "subject": "Mathematics",
+      "assignment": "Geometry Theorems and Proofs",
+      "grade": "86",
+      "comments": "Strong understanding of geometry concepts. Review proof techniques.",
+      "teacherId": "T6",
+      "teacherName": "Joshua KIplagat"
+    },
+    {
+      "id": "G24",
+      "studentId": "S28",
+      "studentName": "Hassan Farah",
+      "subject": "Geography",
+      "assignment": "Population Density and Its Impacts",
+      "grade": "69",
+      "comments": "Adequate. Could benefit from more real-world examples.",
+      "teacherId": "T5",
+      "teacherName": "Frank Daniel"
+    },
+    {
+      "id": "G25",
+      "studentId": "S29",
+      "studentName": "Samira Ahmed",
+      "subject": "Science",
+      "assignment": "Chemical Reactions Report",
+      "grade": "88",
+      "comments": "Great report. Consider linking chemical principles to real-world examples.",
+      "teacherId": "T8",
+      "teacherName": "Timothy Nzau"
+    },
+    {
+      "id": "G26",
+      "studentId": "S30",
+      "studentName": "Oliver Njoroge",
+      "subject": "Mathematics",
+      "assignment": "Algebra and Polynomial Functions",
+      "grade": "92",
+      "comments": "Excellent understanding. Keep practicing complex problems.",
+      "teacherId": "T6",
+      "teacherName": "Joshua KIplagat"
+    },
+    {
+      "id": "G27",
+      "studentId": "S31",
+      "studentName": "Clara Mwangi",
+      "subject": "Geography",
+      "assignment": "Coastal Erosion and Its Effects",
+      "grade": "80",
+      "comments": "Solid work. Would benefit from deeper analysis of affected areas.",
+      "teacherId": "T5",
+      "teacherName": "Frank Daniel"
+    },
+    {
+      "id": "G28",
+      "studentId": "S32",
+      "studentName": "Julius Mwangi",
+      "subject": "History",
+      "assignment": "Cold War Politics",
+      "grade": "70",
+      "comments": "Good, but lacks in-depth discussion on key political figures.",
+      "teacherId": "T1",
+      "teacherName": "Brad Crawford"
+    },
+    {
+      "id": "G29",
+      "studentId": "S33",
+      "studentName": "Penny Njiru",
+      "subject": "Science",
+      "assignment": "Ecology Field Study",
+      "grade": "91",
+      "comments": "Strong understanding. Could benefit from more experimental details.",
+      "teacherId": "T8",
+      "teacherName": "Timothy Nzau"
+    },
+    {
+      "id": "G30",
+      "studentId": "S34",
+      "studentName": "Isaac Kipruto",
+      "subject": "Mathematics",
+      "assignment": "Mathematical Induction Proofs",
+      "grade": "84",
+      "comments": "Good understanding, but try to work through more examples for better clarity.",
+      "teacherId": "T6",
+      "teacherName": "Joshua KIplagat"
+    },
+    {
+      "id": "G31",
+      "studentId": "S35",
+      "studentName": "Ariana Mukiri",
+      "subject": "Geography",
+      "assignment": "Desertification and Mitigation Strategies",
+      "grade": "77",
+      "comments": "Good start but could benefit from a more detailed analysis of solutions.",
+      "teacherId": "T5",
+      "teacherName": "Frank Daniel"
+    },
+    {
+      "id": "G32",
+      "studentId": "S36",
+      "studentName": "David Kariuki",
+      "subject": "Science",
+      "assignment": "Microbial Growth Lab",
+      "grade": "85",
+      "comments": "Good results, but more discussion needed on possible factors affecting growth.",
+      "teacherId": "T8",
+      "teacherName": "Timothy Nzau"
+    },
+    {
+      "id": "G33",
+      "studentId": "S37",
+      "studentName": "Olivia Mumo",
+      "subject": "Mathematics",
+      "assignment": "Statistics and Data Interpretation",
+      "grade": "91",
+      "comments": "Excellent work. A few areas to strengthen with advanced data analysis.",
+      "teacherId": "T6",
+      "teacherName": "Joshua KIplagat"
+    },
+    {
+      "id": "G34",
+      "studentId": "S38",
+      "studentName": "James Otieno",
+      "subject": "History",
+      "assignment": "Colonialism and Its Impact",
+      "grade": "79",
+      "comments": "Good effort, but expand on the economic consequences of colonialism.",
+      "teacherId": "T1",
+      "teacherName": "Brad Crawford"
+    },
+    {
+      "id": "G35",
+      "studentId": "S39",
+      "studentName": "Talia Mwangi",
+      "subject": "Science",
+      "assignment": "Renewable Energy Sources",
+      "grade": "83",
+      "comments": "Solid analysis. Would benefit from more data to support your argument.",
+      "teacherId": "T8",
+      "teacherName": "Timothy Nzau"
+    },
+    {
+      "id": "G36",
+      "studentId": "S40",
+      "studentName": "Vicky Kiptoo",
+      "subject": "Mathematics",
+      "assignment": "Calculus Exam Review",
+      "grade": "86",
+      "comments": "Good work, but review more on integration techniques for better clarity.",
+      "teacherId": "T6",
+      "teacherName": "Joshua KIplagat"
+    },
+    {
+      "id": "G37",
+      "studentId": "S41",
+      "studentName": "Alfred Kimani",
+      "subject": "History",
+      "assignment": "Renaissance Art and Culture",
+      "grade": "78",
+      "comments": "Solid work, but deeper analysis of key artists would improve the essay.",
+      "teacherId": "T1",
+      "teacherName": "Brad Crawford"
+    },
+    {
+      "id": "G38",
+      "studentId": "S42",
+      "studentName": "Diana Kinyua",
+      "subject": "Geography",
+      "assignment": "Agricultural Practices and Sustainability",
+      "grade": "89",
+      "comments": "Great research! Focus on making your arguments more concise.",
+      "teacherId": "T5",
+      "teacherName": "Frank Daniel"
+    },
+    {
+      "id": "G39",
+      "studentId": "S43",
+      "studentName": "Joyce Wanjiru",
+      "subject": "Science",
+      "assignment": "Environmental Science Case Study",
+      "grade": "88",
+      "comments": "Well-written, but should include more data points to support conclusions.",
+      "teacherId": "T8",
+      "teacherName": "Timothy Nzau"
+    },
+    {
+      "id": "G40",
+      "studentId": "S44",
+      "studentName": "Mark Njoroge",
+      "subject": "Mathematics",
+      "assignment": "Optimization Problems",
+      "grade": "72",
+      "comments": "Needs more work. Review optimization methods and examples.",
       "teacherId": "T6",
       "teacherName": "Joshua KIplagat"
     }
-  ]
+  ]  
 }
